@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokemon GO Lv23 무과금 성장 로드맵</title>
+    <meta
+      name="description"
+      content="Pokemon GO 레벨 23 무과금 뉴비를 위한 성장 로드맵, 반복 컨텐츠, Lv30 이후 효율, 좋은 포켓몬 기준 요약."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7f2;
+        --surface: #ffffff;
+        --ink: #1c2430;
+        --muted: #626f7f;
+        --line: #d9e0d8;
+        --green: #2f8f5b;
+        --blue: #2f6fd6;
+        --red: #d94e3f;
+        --yellow: #f2b84b;
+        --shadow: 0 18px 50px rgba(26, 39, 59, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(47, 143, 91, 0.18), transparent 34rem),
+          linear-gradient(180deg, #f9fbf5 0%, var(--bg) 36rem);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 78vh;
+        display: grid;
+        align-items: center;
+        padding: 56px 20px 44px;
+        color: #102234;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(246, 247, 242, 0.98) 0%, rgba(246, 247, 242, 0.86) 40%, rgba(246, 247, 242, 0.18) 100%),
+          url("data:image/svg+xml,%3Csvg width='1600' height='900' viewBox='0 0 1600 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%238fd8ff'/%3E%3Cstop offset='1' stop-color='%23f7fbf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23sky)'/%3E%3Cpath d='M0 610 C240 520 320 680 520 610 C760 525 900 600 1080 552 C1290 496 1440 560 1600 506 L1600 900 L0 900 Z' fill='%238bd36a'/%3E%3Cpath d='M0 700 C260 620 410 705 620 650 C850 590 1040 660 1250 610 C1410 572 1510 610 1600 580 L1600 900 L0 900 Z' fill='%2369bd66'/%3E%3Cpath d='M990 900 C965 755 880 650 720 580 C655 552 595 522 555 480' fill='none' stroke='%23fff7de' stroke-width='58' stroke-linecap='round'/%3E%3Cpath d='M990 900 C965 755 880 650 720 580 C655 552 595 522 555 480' fill='none' stroke='%23d8b778' stroke-width='4' opacity='.45'/%3E%3Crect x='250' y='115' rx='54' width='455' height='700' fill='%231a2634' transform='rotate(-8 250 115)'/%3E%3Crect x='284' y='160' rx='28' width='385' height='605' fill='%23b8efbe' transform='rotate(-8 284 160)'/%3E%3Cpath d='M318 260 L640 214 M325 348 L662 302 M340 438 L680 390 M365 545 L692 488 M420 680 L680 620 M410 170 L472 760 M550 170 L615 748' stroke='%23efffe9' stroke-width='10' opacity='.8'/%3E%3Cpath d='M490 215 C570 290 420 360 520 430 C610 490 500 585 590 675' fill='none' stroke='%23ffffff' stroke-width='16' stroke-linecap='round' stroke-dasharray='22 22'/%3E%3Cg transform='translate(780 170)'%3E%3Cpath d='M36 0 C16 0 0 16 0 36 C0 68 36 110 36 110 C36 110 72 68 72 36 C72 16 56 0 36 0 Z' fill='%232f6fd6'/%3E%3Ccircle cx='36' cy='35' r='14' fill='%23fff'/%3E%3C/g%3E%3Cg transform='translate(435 285)'%3E%3Cpath d='M42 0 C18 0 0 19 0 42 C0 80 42 130 42 130 C42 130 84 80 84 42 C84 19 66 0 42 0 Z' fill='%23d94e3f'/%3E%3Ccircle cx='42' cy='41' r='17' fill='%23fff'/%3E%3C/g%3E%3Cg transform='translate(915 520)'%3E%3Crect x='0' y='110' width='230' height='150' rx='28' fill='%232f6fd6'/%3E%3Cpath d='M42 120 L68 44 C78 16 103 0 132 6 C162 12 180 35 180 66 L180 120 Z' fill='%233a7ee7'/%3E%3Crect x='52' y='128' width='122' height='92' rx='12' fill='%231f5fb8' opacity='.45'/%3E%3Ccircle cx='114' cy='105' r='21' fill='%23f2b84b'/%3E%3C/g%3E%3Cg transform='translate(760 695)'%3E%3Cellipse cx='70' cy='45' rx='70' ry='25' fill='%23e6a83d'/%3E%3Cellipse cx='70' cy='34' rx='70' ry='25' fill='%23ffd15f'/%3E%3Cellipse cx='70' cy='34' rx='42' ry='13' fill='%23f2b84b'/%3E%3C/g%3E%3Cg transform='translate(690 720)'%3E%3Cellipse cx='55' cy='34' rx='55' ry='20' fill='%23d79a2d'/%3E%3Cellipse cx='55' cy='26' rx='55' ry='20' fill='%23ffd15f'/%3E%3C/g%3E%3Ccircle cx='742' cy='660' r='56' fill='%23ffffff'/%3E%3Cpath d='M686 660 A56 56 0 0 1 798 660 L686 660 Z' fill='%23e64d43'/%3E%3Cpath d='M686 660 L798 660' stroke='%231a2634' stroke-width='8'/%3E%3Ccircle cx='742' cy='660' r='18' fill='%23ffffff' stroke='%231a2634' stroke-width='8'/%3E%3Cg fill='%233f9a55'%3E%3Ccircle cx='1265' cy='585' r='42'/%3E%3Cpath d='M1230 560 L1198 510 L1250 538 Z'/%3E%3Cpath d='M1295 560 L1335 515 L1317 575 Z'/%3E%3C/g%3E%3Cg fill='%232f6fd6'%3E%3Ccircle cx='610' cy='575' r='36'/%3E%3Cpath d='M580 552 L555 510 L600 532 Z'/%3E%3Cpath d='M638 552 L676 520 L660 568 Z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+
+      .wrap {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+      }
+
+      .hero-content {
+        max-width: 620px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 18px;
+        padding: 7px 12px;
+        border: 1px solid rgba(47, 111, 214, 0.28);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        color: #1f5fb8;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 7vw, 72px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        margin: 22px 0 0;
+        max-width: 560px;
+        color: #344356;
+        font-size: 19px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 30px;
+        max-width: 600px;
+      }
+
+      .metric {
+        min-height: 100px;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 8px 30px rgba(27, 39, 58, 0.1);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 22px;
+        line-height: 1.1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      main {
+        padding: 18px 20px 72px;
+      }
+
+      section {
+        margin-top: 42px;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: clamp(26px, 4vw, 38px);
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        min-height: 190px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 21px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .tag {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .tag.green {
+        background: var(--green);
+      }
+
+      .tag.blue {
+        background: var(--blue);
+      }
+
+      .tag.red {
+        background: var(--red);
+      }
+
+      .table-box {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 760px;
+      }
+
+      th,
+      td {
+        padding: 15px 16px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #edf4ea;
+        color: #263242;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      td:first-child,
+      th:first-child {
+        font-weight: 800;
+      }
+
+      .pill {
+        display: inline-block;
+        min-width: 54px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: #edf2ff;
+        color: #244fa5;
+        font-size: 12px;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .note {
+        padding: 22px;
+        border-left: 6px solid var(--yellow);
+        border-radius: 8px;
+        background: #fff7e0;
+        color: #3e3320;
+        font-weight: 700;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        font-weight: 750;
+      }
+
+      footer {
+        padding: 32px 20px 54px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 820px) {
+        .hero {
+          min-height: auto;
+          padding-top: 42px;
+        }
+
+        .hero::before {
+          background:
+            linear-gradient(180deg, rgba(246, 247, 242, 0.98) 0%, rgba(246, 247, 242, 0.86) 54%, rgba(246, 247, 242, 0.4) 100%),
+            url("data:image/svg+xml,%3Csvg width='900' height='1200' viewBox='0 0 900 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='900' height='1200' fill='%238fd8ff'/%3E%3Cpath d='M0 790 C180 680 315 780 460 720 C620 652 760 700 900 630 L900 1200 L0 1200 Z' fill='%238bd36a'/%3E%3Cpath d='M0 905 C220 800 410 910 590 830 C720 772 820 800 900 760 L900 1200 L0 1200 Z' fill='%2369bd66'/%3E%3Cpath d='M600 1200 C590 960 500 830 355 740 C290 700 235 655 210 590' fill='none' stroke='%23fff7de' stroke-width='48' stroke-linecap='round'/%3E%3Crect x='170' y='130' rx='42' width='360' height='580' fill='%231a2634' transform='rotate(-7 170 130)'/%3E%3Crect x='198' y='168' rx='24' width='306' height='498' fill='%23b8efbe' transform='rotate(-7 198 168)'/%3E%3Cpath d='M250 260 L500 230 M260 350 L520 315 M278 445 L535 410 M300 555 L542 505 M350 675 L542 620 M305 178 L365 675 M420 178 L475 666' stroke='%23efffe9' stroke-width='9' opacity='.8'/%3E%3Cpath d='M390 240 C465 310 330 360 430 438 C510 500 420 570 490 655' fill='none' stroke='%23ffffff' stroke-width='14' stroke-linecap='round' stroke-dasharray='18 20'/%3E%3Cg transform='translate(570 330)'%3E%3Cpath d='M36 0 C16 0 0 16 0 36 C0 68 36 110 36 110 C36 110 72 68 72 36 C72 16 56 0 36 0 Z' fill='%232f6fd6'/%3E%3Ccircle cx='36' cy='35' r='14' fill='%23fff'/%3E%3C/g%3E%3Cg transform='translate(265 360)'%3E%3Cpath d='M42 0 C18 0 0 19 0 42 C0 80 42 130 42 130 C42 130 84 80 84 42 C84 19 66 0 42 0 Z' fill='%23d94e3f'/%3E%3Ccircle cx='42' cy='41' r='17' fill='%23fff'/%3E%3C/g%3E%3Cg transform='translate(575 830)'%3E%3Crect x='0' y='95' width='200' height='135' rx='24' fill='%232f6fd6'/%3E%3Cpath d='M42 105 L62 42 C72 14 98 0 124 5 C153 10 170 34 170 62 L170 105 Z' fill='%233a7ee7'/%3E%3Ccircle cx='104' cy='92' r='19' fill='%23f2b84b'/%3E%3C/g%3E%3Cg transform='translate(420 910)'%3E%3Cellipse cx='60' cy='40' rx='60' ry='22' fill='%23e6a83d'/%3E%3Cellipse cx='60' cy='30' rx='60' ry='22' fill='%23ffd15f'/%3E%3C/g%3E%3Ccircle cx='380' cy='870' r='48' fill='%23fff'/%3E%3Cpath d='M332 870 A48 48 0 0 1 428 870 L332 870 Z' fill='%23e64d43'/%3E%3Cpath d='M332 870 L428 870' stroke='%231a2634' stroke-width='7'/%3E%3Ccircle cx='380' cy='870' r='16' fill='%23fff' stroke='%231a2634' stroke-width='7'/%3E%3C/svg%3E");
+          background-size: cover;
+          background-position: center bottom;
+        }
+
+        .hero-grid,
+        .cards,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .metric {
+          min-height: 82px;
+        }
+
+        main {
+          padding-top: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap hero-content">
+        <div class="eyebrow">Lv23 무과금 뉴비 로드맵</div>
+        <h1>Pokemon GO 빠른 성장 요약</h1>
+        <p class="subtitle">
+          지금은 강한 포켓몬을 완성하는 단계가 아니라, XP, 별의모래, 코인, 박스 공간,
+          실전 후보를 모으는 구간이다. Lv30 전까지는 자원 낭비를 줄이는 것이 핵심이다.
+        </p>
+        <div class="hero-grid" aria-label="핵심 원칙">
+          <div class="metric">
+            <strong>Lv23-30</strong>
+            <span>모으고 아끼는 단계</span>
+          </div>
+          <div class="metric">
+            <strong>Lv30+</strong>
+            <span>야생 고레벨 파밍 시작</span>
+          </div>
+          <div class="metric">
+            <strong>0원</strong>
+            <span>코인은 박스/가방에만</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section>
+          <h2>레벨별 로드맵</h2>
+          <p class="lead">Lv23 기준으로 가장 중요한 판단은 “강화보다 기반 구축”이다.</p>
+          <div class="cards">
+            <article class="card">
+              <span class="tag green">Lv23-30</span>
+              <h3>자원 확보</h3>
+              <p>
+                매일 포획, 포켓스톱, 필드리서치, 무료 레이드 패스, 체육관 코인을 챙긴다.
+                별의모래 강화는 최소화한다.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag blue">Lv30-35</span>
+              <h3>실전 전력 구축</h3>
+              <p>
+                야생에서 높은 레벨 포켓몬이 나오기 쉬워진다. 타입별 레이드 딜러를 3-6마리씩
+                천천히 채운다.
+              </p>
+            </article>
+            <article class="card">
+              <span class="tag red">Lv35+</span>
+              <h3>장기 투자</h3>
+              <p>
+                전설, 그림자, 메가, 커뮤니티데이 특별기술 포켓몬처럼 오래 쓸 후보에
+                별의모래를 집중한다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>반복 컨텐츠 우선순위</h2>
+          <p class="lead">시간이 적다면 우선순위 1만 챙겨도 성장 기반은 유지된다.</p>
+          <div class="table-box">
+            <table>
+              <thead>
+                <tr>
+                  <th>우선</th>
+                  <th>컨텐츠</th>
+                  <th>반복주기</th>
+                  <th>왜 중요한가</th>
+                  <th>무과금 팁</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="pill">1</span></td>
+                  <td>포켓몬 1마리 + 포켓스톱 1회</td>
+                  <td>매일</td>
+                  <td>7일 연속 보너스로 XP와 아이템 효율이 좋다.</td>
+                  <td>바쁜 날에도 이 루틴은 유지한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">1</span></td>
+                  <td>체육관 코인</td>
+                  <td>매일 최대 50코인</td>
+                  <td>무과금의 핵심 유료재화 수급처다.</td>
+                  <td>코인은 포켓몬 박스, 아이템 가방 확장에 우선 사용한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">1</span></td>
+                  <td>무료 레이드 패스</td>
+                  <td>매일 1회</td>
+                  <td>이상한사탕, 기술머신, 강한 포켓몬 확보 기회다.</td>
+                  <td>전설 레이드는 사람 많은 시간대와 장소를 활용한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">1</span></td>
+                  <td>커뮤니티데이</td>
+                  <td>월 1회 이상</td>
+                  <td>뉴비가 강한 포켓몬과 특별기술을 가장 쉽게 얻는다.</td>
+                  <td>가능하면 2-3시간을 확보하고 대량 포획한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">2</span></td>
+                  <td>필드리서치</td>
+                  <td>매일 1개, 7일 보상</td>
+                  <td>아이템, 포켓몬, 대발견 보상을 안정적으로 준다.</td>
+                  <td>어려운 과제는 삭제하고 쉬운 과제로 교체한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">2</span></td>
+                  <td>친구 선물</td>
+                  <td>매일</td>
+                  <td>아이템과 우정레벨 XP가 크다.</td>
+                  <td>베스트프렌드 직전에는 행복의알을 고려한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">2</span></td>
+                  <td>스포트라이트 아워</td>
+                  <td>매주 화 18-19시</td>
+                  <td>특정 포켓몬과 보너스를 집중 파밍한다.</td>
+                  <td>XP, 사탕, 별의모래 2배 보너스 때 몰아서 플레이한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">3</span></td>
+                  <td>GO 배틀리그 / 로켓단</td>
+                  <td>가능할 때</td>
+                  <td>별의모래, 그림자 포켓몬, 보조 보상이 있다.</td>
+                  <td>초반에는 승률보다 보상 회수에 집중한다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <div class="split">
+            <div>
+              <h2>Lv30부터 효율이 좋아지는 이유</h2>
+              <p class="lead">
+                Lv30 이후에는 야생 포켓몬이 최대 Lv30까지, 날씨부스트 조건에서는 최대 Lv35까지
+                등장할 수 있다. 그래서 처음부터 CP가 높은 포켓몬을 잡아 별의모래를 덜 쓰고
+                바로 전력으로 쓰기 쉽다.
+              </p>
+              <div class="note">
+                Lv30 전까지는 98% 저CP 포켓몬보다 70% 고CP 포켓몬이 당장 더 유용할 수 있다.
+              </div>
+            </div>
+            <div class="table-box">
+              <table>
+                <thead>
+                  <tr>
+                    <th>포켓몬</th>
+                    <th>상태</th>
+                    <th>판단</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>A</td>
+                    <td>IV 98%, 낮은 CP</td>
+                    <td>장기 후보지만 키우려면 별의모래가 많이 든다.</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>IV 70%, 높은 CP</td>
+                    <td>초반 레이드와 체육관에서 바로 쓰기 좋다.</td>
+                  </tr>
+                  <tr>
+                    <td>C</td>
+                    <td>IV 90%+, 높은 CP</td>
+                    <td>장기 투자 후보로 남겨둘 가치가 크다.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>좋은 포켓몬의 기준</h2>
+          <p class="lead">좋은 포켓몬은 목적에 따라 다르다. 뉴비는 아래 순서로 보면 된다.</p>
+          <div class="table-box">
+            <table>
+              <thead>
+                <tr>
+                  <th>우선순위</th>
+                  <th>기준</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>타입과 기술</td>
+                  <td>물 포켓몬은 물 기술, 불꽃 포켓몬은 불꽃 기술처럼 타입과 기술이 맞아야 한다.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>종족 자체 성능</td>
+                  <td>IV가 좋아도 약한 종족이면 한계가 있다. 강한 종족을 우선 남긴다.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>CP / 포켓몬 레벨</td>
+                  <td>초반에는 높은 CP가 즉시 전력으로 더 중요할 때가 많다.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>IV</td>
+                  <td>장기 강화할 포켓몬을 고를 때 중요하다. Lv23에서는 과몰입하지 않는다.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>특별기술 / 그림자 / 메가</td>
+                  <td>나중에 성능 차이가 커진다. 좋은 그림자 포켓몬은 함부로 정화하지 않는다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>지금 당장 할 일</h2>
+          <ul class="checklist">
+            <li>별의모래는 아낀다. Lv30 전 강화는 당장 쓸 고CP 포켓몬만 최소로 한다.</li>
+            <li>코인은 포켓몬 박스 확장, 그 다음 아이템 가방 확장에 쓴다.</li>
+            <li>커뮤니티데이와 이벤트 보너스 날에 대량 포획한다.</li>
+            <li>필드리서치, 선물, 무료 레이드 패스, 체육관 코인은 매일 루틴으로 만든다.</li>
+            <li>CP 높고 타입 기술이 맞는 포켓몬은 임시 전력으로 남긴다.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      Lv23 기준 요약. 이벤트 보너스와 세부 일정은 Pokemon GO 게임 내 오늘 탭에서 다시 확인하세요.
+    </footer>
+  </body>
+</html>
