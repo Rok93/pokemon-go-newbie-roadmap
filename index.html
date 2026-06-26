@@ -263,6 +263,107 @@
         align-items: stretch;
       }
 
+      .tabs {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .tab-list {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 10px;
+        background: #edf4ea;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .tab-button {
+        flex: 0 0 auto;
+        min-height: 42px;
+        padding: 9px 13px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: transparent;
+        color: #2b3a4c;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab-button[aria-selected="true"] {
+        border-color: rgba(47, 111, 214, 0.28);
+        background: #ffffff;
+        color: var(--blue);
+        box-shadow: 0 4px 16px rgba(27, 39, 58, 0.08);
+      }
+
+      .tab-panel {
+        display: none;
+        padding: 18px;
+      }
+
+      .tab-panel.active {
+        display: block;
+      }
+
+      .tier-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .monster {
+        display: grid;
+        gap: 8px;
+        min-height: 152px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcf8;
+      }
+
+      .monster-top {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .monster h3 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .stars {
+        flex: 0 0 auto;
+        color: #d38a00;
+        font-size: 15px;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+
+      .monster p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .route {
+        display: inline-flex;
+        width: fit-content;
+        max-width: 100%;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: #eef5ff;
+        color: #244fa5;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
       .checklist {
         display: grid;
         gap: 10px;
@@ -301,7 +402,8 @@
 
         .hero-grid,
         .cards,
-        .split {
+        .split,
+        .tier-grid {
           grid-template-columns: 1fr;
         }
 
@@ -537,6 +639,208 @@
           </div>
         </section>
 
+        <section id="monster-tabs">
+          <h2>컨텐츠별 추천 포켓몬</h2>
+          <p class="lead">
+            별은 Lv23 무과금 기준 보관 우선순위다. 시즌·이벤트에 따라 입수처가 바뀌므로
+            “대표 루트”로 보고, 오늘 탭과 주변 레이드 알을 같이 확인하면 된다.
+          </p>
+          <div class="tabs">
+            <div class="tab-list" role="tablist" aria-label="추천 포켓몬 분류">
+              <button class="tab-button" id="tab-raid" type="button" role="tab" aria-selected="true" aria-controls="panel-raid">
+                레이드/체육관
+              </button>
+              <button class="tab-button" id="tab-rocket" type="button" role="tab" aria-selected="false" aria-controls="panel-rocket">
+                로켓단
+              </button>
+              <button class="tab-button" id="tab-gbl" type="button" role="tab" aria-selected="false" aria-controls="panel-gbl">
+                GO 배틀리그
+              </button>
+              <button class="tab-button" id="tab-legend" type="button" role="tab" aria-selected="false" aria-controls="panel-legend">
+                메가·전설
+              </button>
+              <button class="tab-button" id="tab-budget" type="button" role="tab" aria-selected="false" aria-controls="panel-budget">
+                뉴비 임시전력
+              </button>
+            </div>
+
+            <div class="tab-panel active" id="panel-raid" role="tabpanel" aria-labelledby="tab-raid">
+              <div class="tier-grid">
+                <article class="monster">
+                  <div class="monster-top"><h3>괴력몬</h3><span class="stars">★★★★★</span></div>
+                  <p>격투 딜러 기본기. 노말, 바위, 얼음, 악, 강철 레이드에 넓게 쓴다.</p>
+                  <span class="route">알통몬 야생/이벤트/교환</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>맘모꾸리</h3><span class="stars">★★★★★</span></div>
+                  <p>얼음·땅 양쪽으로 오래 쓰는 실전형. 드래곤 레이드 대응에 특히 좋다.</p>
+                  <span class="route">꾸꾸리 야생/이벤트/로켓단 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>거대코뿌리</h3><span class="stars">★★★★★</span></div>
+                  <p>바위·땅 딜러. 바위 특별기술이 있으면 장기 가치가 크게 올라간다.</p>
+                  <span class="route">뿔카노 야생/이벤트/커뮤니티데이 복각</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>마기라스</h3><span class="stars">★★★★</span></div>
+                  <p>악·바위 딜러로 범용성이 좋다. 메가 진화까지 고려하면 보관 가치가 높다.</p>
+                  <span class="route">애버라스 이벤트/레이드/알/교환</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>샹델라</h3><span class="stars">★★★★</span></div>
+                  <p>고스트·불꽃 딜러. 에스퍼, 고스트, 벌레, 강철 레이드에 쓸 수 있다.</p>
+                  <span class="route">불켜미 이벤트/알/야생 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>로즈레이드</h3><span class="stars">★★★</span></div>
+                  <p>풀·독 딜러. 물, 땅, 바위 보스 상대로 초중반 효율이 좋다.</p>
+                  <span class="route">꼬몽울/로젤리아 야생/이벤트</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="panel-rocket" role="tabpanel" aria-labelledby="tab-rocket">
+              <div class="tier-grid">
+                <article class="monster">
+                  <div class="monster-top"><h3>그림자 알통몬</h3><span class="stars">★★★★★</span></div>
+                  <p>그림자 괴력몬은 초보가 오래 쓰기 좋은 고화력 격투 딜러다.</p>
+                  <span class="route">로켓단 조무래기 라인업 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>그림자 꾸꾸리</h3><span class="stars">★★★★★</span></div>
+                  <p>그림자 맘모꾸리는 드래곤 레이드 대응력이 좋아 보이면 우선 보관한다.</p>
+                  <span class="route">로켓단 얼음/땅 라인업 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>그림자 애버라스</h3><span class="stars">★★★★★</span></div>
+                  <p>그림자 마기라스는 악·바위 딜러로 강력하다. 좋은 개체는 정화하지 않는다.</p>
+                  <span class="route">로켓단/리더 라인업 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>그림자 미뇽</h3><span class="stars">★★★★</span></div>
+                  <p>그림자 망나뇽은 드래곤 딜러와 PvP 양쪽 가치가 있다.</p>
+                  <span class="route">로켓단 드래곤 라인업 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>그림자 메탕</h3><span class="stars">★★★★</span></div>
+                  <p>메타그로스까지 키우면 강철 딜러 핵심. 특별기술 여부가 중요하다.</p>
+                  <span class="route">로켓단/이벤트 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>그림자 잉어킹</h3><span class="stars">★★★</span></div>
+                  <p>사탕이 많이 필요하지만 갸라도스는 메가와 PvP 활용도가 있다.</p>
+                  <span class="route">로켓단 물 라인업 변동</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="panel-gbl" role="tabpanel" aria-labelledby="tab-gbl">
+              <div class="tier-grid">
+                <article class="monster">
+                  <div class="monster-top"><h3>마릴리</h3><span class="stars">★★★★★</span></div>
+                  <p>슈퍼리그 대표 탱커. 낮은 공격 IV, 높은 방어·HP 개체를 보관한다.</p>
+                  <span class="route">마릴/루리리 이벤트/알/야생 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>대짱이</h3><span class="stars">★★★★★</span></div>
+                  <p>슈퍼·하이퍼리그 모두 강하다. 하이드로캐논 보유 여부가 핵심이다.</p>
+                  <span class="route">물짱이 이벤트/커뮤니티데이 복각/교환</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>파비코리</h3><span class="stars">★★★★</span></div>
+                  <p>슈퍼리그 입문용으로 좋다. 사탕 400개가 필요해서 장기 파밍한다.</p>
+                  <span class="route">파비코 야생/이벤트</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>랜턴</h3><span class="stars">★★★★</span></div>
+                  <p>물·전기 타입 조합이 좋아 슈퍼리그에서 꾸준히 쓸 수 있다.</p>
+                  <span class="route">초라기 야생/이벤트/알</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>버랜지나</h3><span class="stars">★★★★</span></div>
+                  <p>슈퍼·하이퍼리그에서 내구가 좋다. XL 사탕 구간은 나중 목표로 둔다.</p>
+                  <span class="route">벌차이 알/리서치/이벤트 변동</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>요가램</h3><span class="stars">★★★</span></div>
+                  <p>슈퍼리그 전통 강자지만 XL 투자 부담이 커서 초반에는 후보 보관 위주다.</p>
+                  <span class="route">요가랑 야생/이벤트</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="panel-legend" role="tabpanel" aria-labelledby="tab-legend">
+              <div class="tier-grid">
+                <article class="monster">
+                  <div class="monster-top"><h3>레쿠쟈</h3><span class="stars">★★★★★</span></div>
+                  <p>드래곤·비행 최상급 후보. 메가 레쿠쟈까지 고려하면 최우선 보관이다.</p>
+                  <span class="route">전설/메가 레이드 이벤트</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>그란돈</h3><span class="stars">★★★★★</span></div>
+                  <p>땅 딜러 핵심. 원시회귀와 전용기 보유 시 장기 가치가 높다.</p>
+                  <span class="route">전설/원시 레이드 이벤트</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>가이오가</h3><span class="stars">★★★★★</span></div>
+                  <p>물 타입 대표 딜러. 원시회귀 가능 개체는 무조건 보관한다.</p>
+                  <span class="route">전설/원시 레이드 이벤트</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>뮤츠</h3><span class="stars">★★★★★</span></div>
+                  <p>에스퍼 딜러와 마스터리그 가치가 높다. 그림자 뮤츠는 특히 귀하다.</p>
+                  <span class="route">전설/그림자 레이드 이벤트</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>메가 팬텀</h3><span class="stars">★★★★</span></div>
+                  <p>고스트 딜러와 메가 부스트 용도. 레이드에서 딜을 빠르게 밀어준다.</p>
+                  <span class="route">고오스 야생/이벤트, 메가 레이드</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>메가 리자몽 Y</h3><span class="stars">★★★★</span></div>
+                  <p>불꽃 딜러와 메가 부스트 입문용. 초보도 접근성이 비교적 좋다.</p>
+                  <span class="route">파이리 이벤트/커뮤니티데이 복각, 메가 레이드</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="panel-budget" role="tabpanel" aria-labelledby="tab-budget">
+              <div class="tier-grid">
+                <article class="monster">
+                  <div class="monster-top"><h3>이브이 진화체</h3><span class="stars">★★★★</span></div>
+                  <p>초반 타입 구멍을 메우기 좋다. 글레이시아, 에브이, 님피아를 우선 본다.</p>
+                  <span class="route">이브이 야생/이벤트/리서치</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>갸라도스</h3><span class="stars">★★★★</span></div>
+                  <p>물·악·비행 커버와 메가 진화 가치가 있다. 사탕 부담은 장기 과제로 둔다.</p>
+                  <span class="route">잉어킹 야생/물가/이벤트</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>전룡</h3><span class="stars">★★★</span></div>
+                  <p>전기 딜러가 부족한 초반에 쓸만하다. 메가 진화도 가능하다.</p>
+                  <span class="route">메리프 야생/이벤트/커뮤니티데이 복각</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>나무킹</h3><span class="stars">★★★</span></div>
+                  <p>풀 타입 임시전력. 특별기술이 있으면 가치가 올라간다.</p>
+                  <span class="route">나무지기 이벤트/커뮤니티데이 복각</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>번치코</h3><span class="stars">★★★</span></div>
+                  <p>불꽃·격투 임시전력. 메가 가능성과 특별기술을 체크한다.</p>
+                  <span class="route">아차모 이벤트/커뮤니티데이 복각</span>
+                </article>
+                <article class="monster">
+                  <div class="monster-top"><h3>자포코일</h3><span class="stars">★★★</span></div>
+                  <p>전기·강철 타입으로 레이드와 로켓단에서 무난하게 쓸 수 있다.</p>
+                  <span class="route">코일 야생/이벤트/마그네틱 루어</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section>
           <h2>지금 당장 할 일</h2>
           <ul class="checklist">
@@ -553,5 +857,21 @@
     <footer>
       Lv23 기준 요약. 이벤트 보너스와 세부 일정은 Pokemon GO 게임 내 오늘 탭에서 다시 확인하세요.
     </footer>
+    <script>
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabPanels = document.querySelectorAll(".tab-panel");
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const panelId = button.getAttribute("aria-controls");
+
+          tabButtons.forEach((item) => item.setAttribute("aria-selected", "false"));
+          tabPanels.forEach((panel) => panel.classList.remove("active"));
+
+          button.setAttribute("aria-selected", "true");
+          document.getElementById(panelId).classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>
