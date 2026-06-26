@@ -470,8 +470,8 @@
 
       .type-card {
         display: grid;
-        gap: 10px;
-        min-height: 178px;
+        gap: 12px;
+        min-height: 214px;
         padding: 16px;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -479,21 +479,81 @@
         box-shadow: var(--shadow);
       }
 
+      .type-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
       .type-card h3 {
         margin: 0;
-        font-size: 20px;
+        font-size: 19px;
       }
 
-      .type-row {
+      .type-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .type-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 48px;
+        min-height: 30px;
+        padding: 5px 9px;
+        border-radius: 999px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 950;
+        line-height: 1;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+        white-space: nowrap;
+      }
+
+      .matchup {
         display: grid;
-        grid-template-columns: 74px 1fr;
-        gap: 10px;
-        color: var(--muted);
-        font-size: 14px;
+        gap: 7px;
       }
 
-      .type-row strong {
+      .matchup-label {
         color: #263242;
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      .chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .normal { background: #929da3; }
+      .fire { background: #ff9c54; }
+      .water { background: #4f91d9; }
+      .electric { background: #f4c844; color: #28323d; text-shadow: none; }
+      .grass { background: #63bc5a; }
+      .ice { background: #73cec0; color: #173d43; text-shadow: none; }
+      .fighting { background: #ce416b; }
+      .poison { background: #aa6bc8; }
+      .ground { background: #d97845; }
+      .flying { background: #8fa9de; }
+      .psychic { background: #fa7179; }
+      .bug { background: #91c12f; color: #22320f; text-shadow: none; }
+      .rock { background: #c5b78c; color: #2f2a18; text-shadow: none; }
+      .ghost { background: #5269ad; }
+      .dragon { background: #0b6dc3; }
+      .dark { background: #5a5465; }
+      .steel { background: #5a8ea2; }
+      .fairy { background: #ec8fe6; color: #3d1f3c; text-shadow: none; }
+      .none { background: #dfe5df; color: #59636b; text-shadow: none; }
       }
 
       .raid-focus {
@@ -1121,119 +1181,139 @@
           <h2>공격 타입별 상성표</h2>
           <p class="lead">
             레이드와 로켓단에서는 “내 포켓몬 타입”보다 “내 기술 타입”이 중요하다.
-            아래 표는 공격 기술 기준으로 누구에게 강한지, 약한지, 효과가 없는지를 정리한 것이다.
+            아래 표는 “이 타입 기술로 공격할 때” 누구에게 강한지, 약한지, 효과가 없는지를 정리한 것이다.
           </p>
           <div class="note">
-            예: 물 타입 보스라도 물 기술을 쓰면 물 공격수보다 전기·풀 공격수가 더 좋다.
+            읽는 법: 카드 제목이 공격 기술 타입이고, “강함”에 있는 타입이 맞아야 딜이 잘 들어간다.
+          </div>
+          <div class="type-legend" aria-label="타입 배지 설명" style="margin-top: 16px;">
+            <span class="type-chip normal">노말</span>
+            <span class="type-chip fire">불꽃</span>
+            <span class="type-chip water">물</span>
+            <span class="type-chip electric">전기</span>
+            <span class="type-chip grass">풀</span>
+            <span class="type-chip ice">얼음</span>
+            <span class="type-chip fighting">격투</span>
+            <span class="type-chip poison">독</span>
+            <span class="type-chip ground">땅</span>
+            <span class="type-chip flying">비행</span>
+            <span class="type-chip psychic">에스퍼</span>
+            <span class="type-chip bug">벌레</span>
+            <span class="type-chip rock">바위</span>
+            <span class="type-chip ghost">고스트</span>
+            <span class="type-chip dragon">드래곤</span>
+            <span class="type-chip dark">악</span>
+            <span class="type-chip steel">강철</span>
+            <span class="type-chip fairy">페어리</span>
           </div>
           <div class="type-grid" style="margin-top: 16px;">
             <article class="type-card">
-              <h3>노말</h3>
-              <div class="type-row"><strong>강함</strong><span>없음</span></div>
-              <div class="type-row"><strong>약함</strong><span>바위, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>고스트</span></div>
+              <div class="type-header"><h3>노말 공격</h3><span class="type-chip normal">노말</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip rock">바위</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip ghost">고스트</span></div></div>
             </article>
             <article class="type-card">
-              <h3>불꽃</h3>
-              <div class="type-row"><strong>강함</strong><span>풀, 얼음, 벌레, 강철</span></div>
-              <div class="type-row"><strong>약함</strong><span>불꽃, 물, 바위, 드래곤</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>불꽃 공격</h3><span class="type-chip fire">불꽃</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip grass">풀</span><span class="type-chip ice">얼음</span><span class="type-chip bug">벌레</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip water">물</span><span class="type-chip rock">바위</span><span class="type-chip dragon">드래곤</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>물</h3>
-              <div class="type-row"><strong>강함</strong><span>불꽃, 땅, 바위</span></div>
-              <div class="type-row"><strong>약함</strong><span>물, 풀, 드래곤</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>물 공격</h3><span class="type-chip water">물</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip ground">땅</span><span class="type-chip rock">바위</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip water">물</span><span class="type-chip grass">풀</span><span class="type-chip dragon">드래곤</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>전기</h3>
-              <div class="type-row"><strong>강함</strong><span>물, 비행</span></div>
-              <div class="type-row"><strong>약함</strong><span>전기, 풀, 드래곤</span></div>
-              <div class="type-row"><strong>무효</strong><span>땅</span></div>
+              <div class="type-header"><h3>전기 공격</h3><span class="type-chip electric">전기</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip water">물</span><span class="type-chip flying">비행</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip electric">전기</span><span class="type-chip grass">풀</span><span class="type-chip dragon">드래곤</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip ground">땅</span></div></div>
             </article>
             <article class="type-card">
-              <h3>풀</h3>
-              <div class="type-row"><strong>강함</strong><span>물, 땅, 바위</span></div>
-              <div class="type-row"><strong>약함</strong><span>불꽃, 풀, 독, 비행, 벌레, 드래곤, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>풀 공격</h3><span class="type-chip grass">풀</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip water">물</span><span class="type-chip ground">땅</span><span class="type-chip rock">바위</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip grass">풀</span><span class="type-chip poison">독</span><span class="type-chip flying">비행</span><span class="type-chip bug">벌레</span><span class="type-chip dragon">드래곤</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>얼음</h3>
-              <div class="type-row"><strong>강함</strong><span>풀, 땅, 비행, 드래곤</span></div>
-              <div class="type-row"><strong>약함</strong><span>불꽃, 물, 얼음, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>얼음 공격</h3><span class="type-chip ice">얼음</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip grass">풀</span><span class="type-chip ground">땅</span><span class="type-chip flying">비행</span><span class="type-chip dragon">드래곤</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip water">물</span><span class="type-chip ice">얼음</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>격투</h3>
-              <div class="type-row"><strong>강함</strong><span>노말, 얼음, 바위, 악, 강철</span></div>
-              <div class="type-row"><strong>약함</strong><span>독, 비행, 에스퍼, 벌레, 페어리</span></div>
-              <div class="type-row"><strong>무효</strong><span>고스트</span></div>
+              <div class="type-header"><h3>격투 공격</h3><span class="type-chip fighting">격투</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip normal">노말</span><span class="type-chip ice">얼음</span><span class="type-chip rock">바위</span><span class="type-chip dark">악</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip poison">독</span><span class="type-chip flying">비행</span><span class="type-chip psychic">에스퍼</span><span class="type-chip bug">벌레</span><span class="type-chip fairy">페어리</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip ghost">고스트</span></div></div>
             </article>
             <article class="type-card">
-              <h3>독</h3>
-              <div class="type-row"><strong>강함</strong><span>풀, 페어리</span></div>
-              <div class="type-row"><strong>약함</strong><span>독, 땅, 바위, 고스트</span></div>
-              <div class="type-row"><strong>무효</strong><span>강철</span></div>
+              <div class="type-header"><h3>독 공격</h3><span class="type-chip poison">독</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip grass">풀</span><span class="type-chip fairy">페어리</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip poison">독</span><span class="type-chip ground">땅</span><span class="type-chip rock">바위</span><span class="type-chip ghost">고스트</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip steel">강철</span></div></div>
             </article>
             <article class="type-card">
-              <h3>땅</h3>
-              <div class="type-row"><strong>강함</strong><span>불꽃, 전기, 독, 바위, 강철</span></div>
-              <div class="type-row"><strong>약함</strong><span>풀, 벌레</span></div>
-              <div class="type-row"><strong>무효</strong><span>비행</span></div>
+              <div class="type-header"><h3>땅 공격</h3><span class="type-chip ground">땅</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip electric">전기</span><span class="type-chip poison">독</span><span class="type-chip rock">바위</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip grass">풀</span><span class="type-chip bug">벌레</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip flying">비행</span></div></div>
             </article>
             <article class="type-card">
-              <h3>비행</h3>
-              <div class="type-row"><strong>강함</strong><span>풀, 격투, 벌레</span></div>
-              <div class="type-row"><strong>약함</strong><span>전기, 바위, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>비행 공격</h3><span class="type-chip flying">비행</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip grass">풀</span><span class="type-chip fighting">격투</span><span class="type-chip bug">벌레</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip electric">전기</span><span class="type-chip rock">바위</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>에스퍼</h3>
-              <div class="type-row"><strong>강함</strong><span>격투, 독</span></div>
-              <div class="type-row"><strong>약함</strong><span>에스퍼, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>악</span></div>
+              <div class="type-header"><h3>에스퍼 공격</h3><span class="type-chip psychic">에스퍼</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip fighting">격투</span><span class="type-chip poison">독</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip psychic">에스퍼</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip dark">악</span></div></div>
             </article>
             <article class="type-card">
-              <h3>벌레</h3>
-              <div class="type-row"><strong>강함</strong><span>풀, 에스퍼, 악</span></div>
-              <div class="type-row"><strong>약함</strong><span>불꽃, 격투, 독, 비행, 고스트, 강철, 페어리</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>벌레 공격</h3><span class="type-chip bug">벌레</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip grass">풀</span><span class="type-chip psychic">에스퍼</span><span class="type-chip dark">악</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip fighting">격투</span><span class="type-chip poison">독</span><span class="type-chip flying">비행</span><span class="type-chip ghost">고스트</span><span class="type-chip steel">강철</span><span class="type-chip fairy">페어리</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>바위</h3>
-              <div class="type-row"><strong>강함</strong><span>불꽃, 얼음, 비행, 벌레</span></div>
-              <div class="type-row"><strong>약함</strong><span>격투, 땅, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>바위 공격</h3><span class="type-chip rock">바위</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip ice">얼음</span><span class="type-chip flying">비행</span><span class="type-chip bug">벌레</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fighting">격투</span><span class="type-chip ground">땅</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>고스트</h3>
-              <div class="type-row"><strong>강함</strong><span>에스퍼, 고스트</span></div>
-              <div class="type-row"><strong>약함</strong><span>악</span></div>
-              <div class="type-row"><strong>무효</strong><span>노말</span></div>
+              <div class="type-header"><h3>고스트 공격</h3><span class="type-chip ghost">고스트</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip psychic">에스퍼</span><span class="type-chip ghost">고스트</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip dark">악</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip normal">노말</span></div></div>
             </article>
             <article class="type-card">
-              <h3>드래곤</h3>
-              <div class="type-row"><strong>강함</strong><span>드래곤</span></div>
-              <div class="type-row"><strong>약함</strong><span>강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>페어리</span></div>
+              <div class="type-header"><h3>드래곤 공격</h3><span class="type-chip dragon">드래곤</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip dragon">드래곤</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip fairy">페어리</span></div></div>
             </article>
             <article class="type-card">
-              <h3>악</h3>
-              <div class="type-row"><strong>강함</strong><span>에스퍼, 고스트</span></div>
-              <div class="type-row"><strong>약함</strong><span>격투, 악, 페어리</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>악 공격</h3><span class="type-chip dark">악</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip psychic">에스퍼</span><span class="type-chip ghost">고스트</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fighting">격투</span><span class="type-chip dark">악</span><span class="type-chip fairy">페어리</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>강철</h3>
-              <div class="type-row"><strong>강함</strong><span>얼음, 바위, 페어리</span></div>
-              <div class="type-row"><strong>약함</strong><span>불꽃, 물, 전기, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>강철 공격</h3><span class="type-chip steel">강철</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip ice">얼음</span><span class="type-chip rock">바위</span><span class="type-chip fairy">페어리</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip water">물</span><span class="type-chip electric">전기</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
             <article class="type-card">
-              <h3>페어리</h3>
-              <div class="type-row"><strong>강함</strong><span>격투, 드래곤, 악</span></div>
-              <div class="type-row"><strong>약함</strong><span>불꽃, 독, 강철</span></div>
-              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+              <div class="type-header"><h3>페어리 공격</h3><span class="type-chip fairy">페어리</span></div>
+              <div class="matchup"><span class="matchup-label">강함</span><div class="chip-list"><span class="type-chip fighting">격투</span><span class="type-chip dragon">드래곤</span><span class="type-chip dark">악</span></div></div>
+              <div class="matchup"><span class="matchup-label">약함</span><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip poison">독</span><span class="type-chip steel">강철</span></div></div>
+              <div class="matchup"><span class="matchup-label">효과 없음</span><div class="chip-list"><span class="type-chip none">없음</span></div></div>
             </article>
           </div>
         </section>
