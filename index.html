@@ -436,6 +436,32 @@
         color: var(--muted);
       }
 
+      .feedback-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .action-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 11px 16px;
+        border-radius: 8px;
+        background: var(--green);
+        color: #ffffff;
+        font-weight: 950;
+        text-decoration: none;
+      }
+
+      .action-link.secondary {
+        border: 1px solid var(--line);
+        background: #ffffff;
+        color: #344356;
+      }
+
       .raid-focus {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -542,6 +568,9 @@
             </button>
             <button class="theme-button" id="theme-healing-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-healing">
               회복약
+            </button>
+            <button class="theme-button" id="theme-feedback-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-feedback">
+              피드백
             </button>
           </div>
 
@@ -1119,6 +1148,46 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </section>
+          </div>
+
+          <div class="theme-panel" id="theme-feedback" role="tabpanel" aria-labelledby="theme-feedback-tab">
+        <section id="feedback">
+          <h2>더 보고 싶은 내용 제안하기</h2>
+          <p class="lead">
+            레이드 보스별 공략, 포켓몬 보관 기준, 아이템 부족, 배틀리그처럼 더 보고 싶은 주제를
+            로그인 없이 Google Form으로 남길 수 있다.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <span class="tag green">제안</span>
+              <h3>추가 컨텐츠</h3>
+              <p>현재 레벨과 막히는 상황을 같이 적어주면 다음 업데이트 우선순위를 정하기 쉽다.</p>
+            </article>
+            <article class="card">
+              <span class="tag blue">정정</span>
+              <h3>잘못된 정보</h3>
+              <p>이벤트나 레이드 로테이션처럼 바뀐 정보가 보이면 제보할 수 있다.</p>
+            </article>
+            <article class="card">
+              <span class="tag red">개선</span>
+              <h3>보기 불편한 부분</h3>
+              <p>표가 길다거나, 탭 구성이 헷갈린다거나, 더 짧게 보고 싶은 부분도 남기면 된다.</p>
+            </article>
+          </div>
+          <div class="feedback-actions">
+            <a
+              class="action-link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdCK21gg0xkQ807acaUlCiWoUaJ48G-1ToW63Qp_m_WakVEBw/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              의견 남기기
+            </a>
+            <a class="action-link secondary" href="#theme-roadmap-tab">
+              가이드로 돌아가기
+            </a>
           </div>
         </section>
           </div>
