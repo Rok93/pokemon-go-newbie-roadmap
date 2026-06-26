@@ -263,6 +263,189 @@
         align-items: stretch;
       }
 
+      .trainer-dashboard {
+        margin-top: 18px;
+      }
+
+      .dashboard-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .dashboard-title {
+        max-width: 720px;
+      }
+
+      .dashboard-title h2 {
+        margin-bottom: 8px;
+      }
+
+      .dashboard-title .lead {
+        margin-bottom: 0;
+      }
+
+      .dashboard-badge {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 40px;
+        padding: 8px 12px;
+        border: 1px solid rgba(217, 78, 63, 0.28);
+        border-radius: 999px;
+        background: #fff4ef;
+        color: #a7372e;
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      .dashboard-badge::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 3px solid #1c2430;
+        border-radius: 50%;
+        background:
+          linear-gradient(#e64d43 0 47%, #1c2430 47% 58%, #ffffff 58% 100%);
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .quest-card {
+        min-height: 184px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--green);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 12px 34px rgba(26, 39, 59, 0.1);
+      }
+
+      .quest-card.blue {
+        border-top-color: var(--blue);
+      }
+
+      .quest-card.red {
+        border-top-color: var(--red);
+      }
+
+      .quest-card.yellow {
+        border-top-color: var(--yellow);
+      }
+
+      .quest-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .quest-icon {
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border: 3px solid #1c2430;
+        border-radius: 50%;
+        background:
+          linear-gradient(#2f8f5b 0 47%, #1c2430 47% 58%, #ffffff 58% 100%);
+        box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08);
+      }
+
+      .quest-icon::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 14px;
+        height: 14px;
+        border: 3px solid #1c2430;
+        border-radius: 50%;
+        background: #ffffff;
+        transform: translate(-50%, -50%);
+      }
+
+      .quest-icon.blue {
+        background:
+          linear-gradient(#2f6fd6 0 47%, #1c2430 47% 58%, #ffffff 58% 100%);
+      }
+
+      .quest-icon.red {
+        background:
+          linear-gradient(#d94e3f 0 47%, #1c2430 47% 58%, #ffffff 58% 100%);
+      }
+
+      .quest-icon.yellow {
+        background:
+          linear-gradient(#f2b84b 0 47%, #1c2430 47% 58%, #ffffff 58% 100%);
+      }
+
+      .quest-card h3 {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.2;
+      }
+
+      .quest-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .quick-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .quick-jump {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 10px 14px;
+        border: 1px solid rgba(47, 111, 214, 0.22);
+        border-radius: 8px;
+        background: #ffffff;
+        color: #244fa5;
+        font-size: 14px;
+        font-weight: 950;
+        text-decoration: none;
+        box-shadow: 0 8px 22px rgba(26, 39, 59, 0.08);
+      }
+
+      .quick-jump.primary {
+        border-color: rgba(47, 143, 91, 0.28);
+        background: #edf8f0;
+        color: #1f7446;
+      }
+
+      .resource-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .resource-note {
+        padding: 12px 14px;
+        border: 1px dashed rgba(47, 111, 214, 0.3);
+        border-radius: 8px;
+        background: #f8fbff;
+        color: #344356;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
       .theme-shell {
         margin-top: 42px;
       }
@@ -605,11 +788,22 @@
         .hero-grid,
         .cards,
         .split,
+        .dashboard-grid,
+        .resource-strip,
         .tier-grid,
         .tip-grid,
         .raid-focus,
         .type-grid {
           grid-template-columns: 1fr;
+        }
+
+        .dashboard-header {
+          display: grid;
+          align-items: start;
+        }
+
+        .dashboard-badge {
+          width: fit-content;
         }
 
         .metric {
@@ -650,6 +844,64 @@
 
     <main>
       <div class="wrap">
+        <section class="trainer-dashboard" aria-labelledby="dashboard-title">
+          <div class="dashboard-header">
+            <div class="dashboard-title">
+              <h2 id="dashboard-title">오늘의 트레이너 대시보드</h2>
+              <p class="lead">
+                Lv27 무과금 기준으로 시간이 적은 날에는 아래 4가지만 먼저 챙기면 된다.
+              </p>
+            </div>
+            <div class="dashboard-badge">Lv27-30 준비 구간</div>
+          </div>
+
+          <div class="dashboard-grid" aria-label="오늘 우선 할 일">
+            <article class="quest-card">
+              <div class="quest-top">
+                <h3>연속 보너스</h3>
+                <span class="quest-icon" aria-hidden="true"></span>
+              </div>
+              <p>포켓몬 1마리 포획, 포켓스톱 1회 방문으로 일일 streak를 유지한다.</p>
+            </article>
+            <article class="quest-card blue">
+              <div class="quest-top">
+                <h3>무료 패스</h3>
+                <span class="quest-icon blue" aria-hidden="true"></span>
+              </div>
+              <p>혼자 가능한 1성이라도 레이드 패스를 소모해 XP와 보상을 챙긴다.</p>
+            </article>
+            <article class="quest-card yellow">
+              <div class="quest-top">
+                <h3>50코인</h3>
+                <span class="quest-icon yellow" aria-hidden="true"></span>
+              </div>
+              <p>체육관 배치 기회가 있으면 넣고, 코인은 박스와 가방 확장에 우선 사용한다.</p>
+            </article>
+            <article class="quest-card red">
+              <div class="quest-top">
+                <h3>스탬프</h3>
+                <span class="quest-icon red" aria-hidden="true"></span>
+              </div>
+              <p>쉬운 필드리서치 1개를 완료해서 7일 대발견 흐름을 끊지 않는다.</p>
+            </article>
+          </div>
+
+          <div class="quick-actions" aria-label="자주 보는 가이드 바로가기">
+            <a class="quick-jump primary" href="#theme-routine-tab" data-theme-target="theme-routine-tab">오늘 루틴</a>
+            <a class="quick-jump" href="#theme-raids-tab" data-theme-target="theme-raids-tab">레이드</a>
+            <a class="quick-jump" href="#theme-storage-tab" data-theme-target="theme-storage-tab">박스 정리</a>
+            <a class="quick-jump" href="#theme-healing-tab" data-theme-target="theme-healing-tab">회복약 부족</a>
+            <a class="quick-jump" href="#theme-monsters-tab" data-theme-target="theme-monsters-tab">추천 포켓몬</a>
+            <a class="quick-jump" href="#theme-feedback-tab" data-theme-target="theme-feedback-tab">피드백</a>
+          </div>
+
+          <div class="resource-strip" aria-label="현재 레벨 핵심 메모">
+            <div class="resource-note">Lv27-30: 강화보다 포획, 친구 XP, 이벤트 우선</div>
+            <div class="resource-note">별의모래: Lv30 이후 좋은 고CP 후보에 투자</div>
+            <div class="resource-note">코인: 리모트패스보다 박스/가방 확장 우선</div>
+          </div>
+        </section>
+
         <div class="theme-shell">
           <div class="theme-nav" role="tablist" aria-label="가이드 테마">
             <button class="theme-button" id="theme-roadmap-tab" type="button" role="tab" aria-selected="true" aria-controls="theme-roadmap">
@@ -3785,16 +4037,36 @@
       const themeButtons = document.querySelectorAll(".theme-button");
       const themePanels = document.querySelectorAll(".theme-panel");
 
+      const activateTheme = (button) => {
+        const panelId = button.getAttribute("aria-controls");
+        const panel = document.getElementById(panelId);
+
+        if (!panel) {
+          return;
+        }
+
+        themeButtons.forEach((item) => item.setAttribute("aria-selected", "false"));
+        themePanels.forEach((item) => item.classList.remove("active"));
+
+        button.setAttribute("aria-selected", "true");
+        panel.classList.add("active");
+        window.scrollTo({ top: document.querySelector(".theme-shell").offsetTop - 8, behavior: "smooth" });
+      };
+
       themeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const panelId = button.getAttribute("aria-controls");
+        button.addEventListener("click", () => activateTheme(button));
+      });
 
-          themeButtons.forEach((item) => item.setAttribute("aria-selected", "false"));
-          themePanels.forEach((panel) => panel.classList.remove("active"));
+      document.querySelectorAll("[data-theme-target]").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const button = document.getElementById(link.dataset.themeTarget);
 
-          button.setAttribute("aria-selected", "true");
-          document.getElementById(panelId).classList.add("active");
-          window.scrollTo({ top: document.querySelector(".theme-shell").offsetTop - 8, behavior: "smooth" });
+          if (!button) {
+            return;
+          }
+
+          event.preventDefault();
+          activateTheme(button);
         });
       });
 
