@@ -655,6 +655,9 @@
             <button class="theme-button" id="theme-roadmap-tab" type="button" role="tab" aria-selected="true" aria-controls="theme-roadmap">
               로드맵
             </button>
+            <button class="theme-button" id="theme-storage-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-storage">
+              보관 기준
+            </button>
             <button class="theme-button" id="theme-monsters-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-monsters">
               추천 포켓몬
             </button>
@@ -875,6 +878,106 @@
             <li>코인은 포켓몬 박스 확장, 그 다음 아이템 가방 확장에 쓴다.</li>
             <li>커뮤니티데이와 이벤트 보너스 날에 대량 포획한다.</li>
             <li>CP 높고 타입 기술이 맞는 포켓몬은 임시 전력으로 남긴다.</li>
+          </ul>
+        </section>
+          </div>
+
+          <div class="theme-panel" id="theme-storage" role="tabpanel" aria-labelledby="theme-storage-tab">
+        <section id="storage-guide">
+          <h2>포켓몬 보관 / 박사행 기준</h2>
+          <p class="lead">
+            박스가 부족할 때는 “아까워서 전부 보관”보다 역할별로 나누는 게 중요하다.
+            Lv27에서는 당장 쓸 고CP 전력과 장기 투자 후보만 남기고, 중복·저가치 포켓몬을 줄인다.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <span class="tag green">무조건 보관</span>
+              <h3>희귀·장기 후보</h3>
+              <p>전설, 색이 다른 포켓몬, 좋은 그림자, 메가 가능, 커뮤니티데이 특별기술 후보는 일단 남긴다.</p>
+            </article>
+            <article class="card">
+              <span class="tag blue">조건부 보관</span>
+              <h3>고CP 임시 전력</h3>
+              <p>IV가 낮아도 CP가 높고 타입 기술이 맞으면 Lv30 전까지 레이드/로켓단 임시 전력으로 쓴다.</p>
+            </article>
+            <article class="card">
+              <span class="tag red">정리 후보</span>
+              <h3>낮은 가치 중복</h3>
+              <p>낮은 CP, 낮은 IV, 흔한 종족, 역할이 겹치는 포켓몬은 사탕 2배 이벤트 전까지 정리 후보로 둔다.</p>
+            </article>
+          </div>
+          <div class="table-box" style="margin-top: 16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>상황</th>
+                  <th>보관 기준</th>
+                  <th>정리 기준</th>
+                  <th>메모</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>전설 / 환상</td>
+                  <td>기본 보관. 중복도 교환 후보로 일부 남김</td>
+                  <td>같은 포켓몬이 너무 많으면 낮은 IV부터 교환/정리</td>
+                  <td>사탕 수급이 어려워 이상한사탕 투자 후보</td>
+                </tr>
+                <tr>
+                  <td>색이 다른 포켓몬</td>
+                  <td>희귀 수집 가치로 보관</td>
+                  <td>중복이 많으면 교환 후보</td>
+                  <td>성능이 낮아도 바로 박사행은 비추천</td>
+                </tr>
+                <tr>
+                  <td>그림자 포켓몬</td>
+                  <td>괴력몬, 맘모꾸리, 마기라스, 망나뇽, 메타그로스 계열은 우선 보관</td>
+                  <td>약한 종족, 낮은 가치, 중복은 정리</td>
+                  <td>좋은 그림자는 함부로 정화하지 않기</td>
+                </tr>
+                <tr>
+                  <td>고CP 야생 포켓몬</td>
+                  <td>타입 기술이 맞고 바로 쓸 수 있으면 보관</td>
+                  <td>기술이 안 맞고 종족도 약하면 정리</td>
+                  <td>Lv30 전까지 별의모래 절약용 임시 전력</td>
+                </tr>
+                <tr>
+                  <td>3성 이상 IV</td>
+                  <td>강한 종족이면 장기 후보로 보관</td>
+                  <td>약한 종족이면 도감/수집 목적만 남김</td>
+                  <td>IV보다 종족 성능과 기술이 먼저</td>
+                </tr>
+                <tr>
+                  <td>PvP 후보</td>
+                  <td>슈퍼/하이퍼리그용은 낮은 공격, 높은 방어·HP 개체를 후보로 보관</td>
+                  <td>리그에서 안 쓰는 종족은 정리</td>
+                  <td>레이드용 좋은 IV와 기준이 다름</td>
+                </tr>
+                <tr>
+                  <td>커뮤니티데이 포켓몬</td>
+                  <td>특별기술 진화 후보, 고CP, 좋은 IV, 색이 다른 개체 보관</td>
+                  <td>낮은 CP/낮은 IV 중복은 사탕 2배 박사행 때 정리</td>
+                  <td>이벤트 종료 전 진화 시간 확인</td>
+                </tr>
+                <tr>
+                  <td>체육관 방어용</td>
+                  <td>해피너스, 럭키, 잠만보류는 1-2마리만 보관</td>
+                  <td>회복약 부담이 큰 중복 고HP 포켓몬은 정리</td>
+                  <td>공격용 주력과 분리해서 생각</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>박스가 꽉 찼을 때 정리 순서</h2>
+          <ul class="checklist">
+            <li>1. `최근 잡은 흔한 저CP 포켓몬`부터 정리한다.</li>
+            <li>2. 같은 종족이 많으면 낮은 CP, 낮은 IV, 기술이 안 맞는 순서로 줄인다.</li>
+            <li>3. 전설, 색이 다른 포켓몬, 좋은 그림자, 메가 가능 포켓몬은 마지막까지 보류한다.</li>
+            <li>4. 사탕 2배 박사행 이벤트가 곧 있으면 정리 후보에 태그만 달고 기다린다.</li>
+            <li>5. 친구와 교환할 수 있는 희귀 중복은 바로 버리지 말고 교환 후보로 남긴다.</li>
           </ul>
         </section>
           </div>
