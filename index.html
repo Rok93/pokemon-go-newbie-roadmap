@@ -429,6 +429,67 @@
         color: #1f7446;
       }
 
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .problem-card {
+        display: grid;
+        gap: 10px;
+        min-height: 166px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.96));
+        box-shadow: 0 10px 28px rgba(26, 39, 59, 0.08);
+      }
+
+      .problem-card strong {
+        display: block;
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      .problem-card span {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 750;
+      }
+
+      .problem-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-height: 36px;
+        padding: 7px 11px;
+        border-radius: 8px;
+        background: #edf8f0;
+        color: #1f7446;
+        font-size: 13px;
+        font-weight: 950;
+        text-decoration: none;
+      }
+
+      .problem-card.blue .problem-link {
+        background: #eef5ff;
+        color: #244fa5;
+      }
+
+      .problem-card.red .problem-link {
+        background: #fff4ef;
+        color: #a7372e;
+      }
+
+      .problem-card.yellow .problem-link {
+        background: #fff7e0;
+        color: #6e4a00;
+      }
+
       .resource-strip {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -819,6 +880,7 @@
         .cards,
         .split,
         .dashboard-grid,
+        .problem-grid,
         .resource-strip,
         .tier-grid,
         .tip-grid,
@@ -923,6 +985,29 @@
             <a class="quick-jump" href="#theme-healing-tab" data-theme-target="theme-healing-tab">회복약 부족</a>
             <a class="quick-jump" href="#theme-monsters-tab" data-theme-target="theme-monsters-tab">추천 포켓몬</a>
             <a class="quick-jump" href="#theme-feedback-tab" data-theme-target="theme-feedback-tab">피드백</a>
+          </div>
+
+          <div class="problem-grid" aria-label="상황별 빠른 해결">
+            <article class="problem-card red">
+              <strong>회복약이 모자라다</strong>
+              <span>고HP 포켓몬 풀피보다 기절 회복, 상성 편성, GBL로 우회한다.</span>
+              <a class="problem-link" href="#theme-healing-tab" data-theme-target="theme-healing-tab">절약법 보기</a>
+            </article>
+            <article class="problem-card blue">
+              <strong>무료 패스를 써야 한다</strong>
+              <span>Lv27은 1성·3성 위주로 성공률을 먼저 챙기고 보상을 누적한다.</span>
+              <a class="problem-link" href="#theme-raids-tab" data-theme-target="theme-raids-tab">레이드 보기</a>
+            </article>
+            <article class="problem-card yellow">
+              <strong>박스가 꽉 찼다</strong>
+              <span>고CP 임시전력, 3성 이상, 희귀·교환 후보만 남기고 기준대로 정리한다.</span>
+              <a class="problem-link" href="#theme-storage-tab" data-theme-target="theme-storage-tab">보관 기준</a>
+            </article>
+            <article class="problem-card">
+              <strong>오늘 뭘 해야 할지 모르겠다</strong>
+              <span>포획, 포켓스톱, 리서치, 무료 패스, 체육관 코인만 먼저 챙긴다.</span>
+              <a class="problem-link" href="#theme-routine-tab" data-theme-target="theme-routine-tab">루틴 보기</a>
+            </article>
           </div>
 
           <div class="resource-strip" aria-label="현재 레벨 핵심 메모">
