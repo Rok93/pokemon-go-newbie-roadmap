@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pokemon GO Lv23 무과금 성장 로드맵</title>
+    <title>Pokemon GO Lv27 무과금 성장 로드맵</title>
     <meta
       name="description"
-      content="Pokemon GO 레벨 23 무과금 뉴비를 위한 성장 로드맵, 반복 컨텐츠, Lv30 이후 효율, 좋은 포켓몬 기준 요약."
+      content="Pokemon GO 레벨 27 무과금 뉴비를 위한 성장 로드맵, 레이드, 추천 포켓몬, 회복약 절약 팁 요약."
     />
     <style>
       :root {
@@ -263,6 +263,53 @@
         align-items: stretch;
       }
 
+      .theme-shell {
+        margin-top: 42px;
+      }
+
+      .theme-nav {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 10px 28px rgba(26, 39, 59, 0.12);
+        backdrop-filter: blur(10px);
+      }
+
+      .theme-button {
+        flex: 0 0 auto;
+        min-height: 46px;
+        padding: 10px 15px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: transparent;
+        color: #344356;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 950;
+        cursor: pointer;
+      }
+
+      .theme-button[aria-selected="true"] {
+        border-color: rgba(47, 143, 91, 0.28);
+        background: #edf8f0;
+        color: #1f7446;
+      }
+
+      .theme-panel {
+        display: none;
+      }
+
+      .theme-panel.active {
+        display: block;
+      }
+
       .tabs {
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -389,6 +436,16 @@
         color: var(--muted);
       }
 
+      .raid-focus {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .raid-focus .metric {
+        min-height: 118px;
+      }
+
       .checklist {
         display: grid;
         gap: 10px;
@@ -429,7 +486,8 @@
         .cards,
         .split,
         .tier-grid,
-        .tip-grid {
+        .tip-grid,
+        .raid-focus {
           grid-template-columns: 1fr;
         }
 
@@ -446,15 +504,15 @@
   <body>
     <header class="hero">
       <div class="wrap hero-content">
-        <div class="eyebrow">Lv23 무과금 뉴비 로드맵</div>
+        <div class="eyebrow">Lv27 무과금 뉴비 로드맵</div>
         <h1>Pokemon GO 빠른 성장 요약</h1>
         <p class="subtitle">
-          지금은 강한 포켓몬을 완성하는 단계가 아니라, XP, 별의모래, 코인, 박스 공간,
-          실전 후보를 모으는 구간이다. Lv30 전까지는 자원 낭비를 줄이는 것이 핵심이다.
+          지금은 Lv30 직전 준비 구간이다. 무료 레이드 패스, 이벤트 포획, 친구 XP로 레벨을 밀고,
+          별의모래는 아껴서 Lv30 이후 좋은 야생 고CP 포켓몬에 투자한다.
         </p>
         <div class="hero-grid" aria-label="핵심 원칙">
           <div class="metric">
-            <strong>Lv23-30</strong>
+            <strong>Lv27-30</strong>
             <span>모으고 아끼는 단계</span>
           </div>
           <div class="metric">
@@ -471,12 +529,29 @@
 
     <main>
       <div class="wrap">
+        <div class="theme-shell">
+          <div class="theme-nav" role="tablist" aria-label="가이드 테마">
+            <button class="theme-button" id="theme-roadmap-tab" type="button" role="tab" aria-selected="true" aria-controls="theme-roadmap">
+              로드맵
+            </button>
+            <button class="theme-button" id="theme-monsters-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-monsters">
+              추천 포켓몬
+            </button>
+            <button class="theme-button" id="theme-raids-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-raids">
+              레이드
+            </button>
+            <button class="theme-button" id="theme-healing-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-healing">
+              회복약
+            </button>
+          </div>
+
+          <div class="theme-panel active" id="theme-roadmap" role="tabpanel" aria-labelledby="theme-roadmap-tab">
         <section>
           <h2>레벨별 로드맵</h2>
-          <p class="lead">Lv23 기준으로 가장 중요한 판단은 “강화보다 기반 구축”이다.</p>
+          <p class="lead">Lv27 기준으로 가장 중요한 판단은 “강화보다 Lv30 준비”다.</p>
           <div class="cards">
             <article class="card">
-              <span class="tag green">Lv23-30</span>
+              <span class="tag green">Lv27-30</span>
               <h3>자원 확보</h3>
               <p>
                 매일 포획, 포켓스톱, 필드리서치, 무료 레이드 패스, 체육관 코인을 챙긴다.
@@ -653,7 +728,7 @@
                 <tr>
                   <td>4</td>
                   <td>IV</td>
-                  <td>장기 강화할 포켓몬을 고를 때 중요하다. Lv23에서는 과몰입하지 않는다.</td>
+                  <td>장기 강화할 포켓몬을 고를 때 중요하다. Lv27에서는 과몰입하지 않는다.</td>
                 </tr>
                 <tr>
                   <td>5</td>
@@ -665,10 +740,23 @@
           </div>
         </section>
 
+        <section>
+          <h2>지금 당장 할 일</h2>
+          <ul class="checklist">
+            <li>Lv27에서는 Lv30까지 XP를 밀면서 별의모래를 아낀다.</li>
+            <li>무료 레이드 패스는 매일 쓴다. 혼자라면 1성, 사람이 모이면 5성/메가 우선.</li>
+            <li>코인은 포켓몬 박스 확장, 그 다음 아이템 가방 확장에 쓴다.</li>
+            <li>커뮤니티데이와 이벤트 보너스 날에 대량 포획한다.</li>
+            <li>CP 높고 타입 기술이 맞는 포켓몬은 임시 전력으로 남긴다.</li>
+          </ul>
+        </section>
+          </div>
+
+          <div class="theme-panel" id="theme-monsters" role="tabpanel" aria-labelledby="theme-monsters-tab">
         <section id="monster-tabs">
           <h2>컨텐츠별 추천 포켓몬</h2>
           <p class="lead">
-            별은 Lv23 무과금 기준 보관 우선순위다. 시즌·이벤트에 따라 입수처가 바뀌므로
+            별은 Lv27 무과금 기준 보관 우선순위다. 시즌·이벤트에 따라 입수처가 바뀌므로
             “대표 루트”로 보고, 오늘 탭과 주변 레이드 알을 같이 확인하면 된다.
           </p>
           <div class="tabs">
@@ -866,7 +954,102 @@
             </div>
           </div>
         </section>
+          </div>
 
+          <div class="theme-panel" id="theme-raids" role="tabpanel" aria-labelledby="theme-raids-tab">
+        <section id="raid-guide">
+          <h2>Lv27 레이드 운영법</h2>
+          <p class="lead">
+            Lv27은 혼자 모든 레이드를 깨는 단계가 아니라, 무료 패스로 보상을 회수하고
+            사람 많은 전설/메가 레이드에 붙어서 계정 전력을 키우는 단계다.
+          </p>
+          <div class="raid-focus" aria-label="레이드 핵심 목표">
+            <div class="metric">
+              <strong>매일 1회</strong>
+              <span>무료 패스 소진</span>
+            </div>
+            <div class="metric">
+              <strong>1성</strong>
+              <span>혼자 안정 클리어</span>
+            </div>
+            <div class="metric">
+              <strong>3성</strong>
+              <span>쉬운 보스만 도전</span>
+            </div>
+            <div class="metric">
+              <strong>5성/메가</strong>
+              <span>사람 모이면 최우선</span>
+            </div>
+          </div>
+          <div class="table-box" style="margin-top: 16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>레이드</th>
+                  <th>Lv27 기준</th>
+                  <th>예시 몬스터</th>
+                  <th>판단</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1성</td>
+                  <td>혼자 가능. 패스가 남으면 보상 회수용으로 좋다.</td>
+                  <td>파이리, 이상해씨, 꼬부기, 이브이, 알통몬, 메리프</td>
+                  <td>이벤트/진화 재료/도감 목적이면 추천</td>
+                </tr>
+                <tr>
+                  <td>3성</td>
+                  <td>상성 딜러가 있으면 도전. 회복약 부족하면 무리하지 않는다.</td>
+                  <td>괴력몬, 팬텀, 마기라스, 잠만보, 라이츄, 샤미드</td>
+                  <td>잡으면 바로 쓸 수 있는 보스면 추천</td>
+                </tr>
+                <tr>
+                  <td>5성 전설</td>
+                  <td>혼자 불가. Campfire/동네 모임/레이드 아워를 활용한다.</td>
+                  <td>뮤츠, 가이오가, 그란돈, 레쿠쟈, 디아루가, 펄기아</td>
+                  <td>무료 패스 최우선 사용처</td>
+                </tr>
+                <tr>
+                  <td>메가</td>
+                  <td>사람 필요. 메가 에너지와 포켓몬을 같이 얻는다.</td>
+                  <td>메가 리자몽, 메가 팬텀, 메가 거북왕, 메가 이상해꽃, 메가 마기라스</td>
+                  <td>메가 진화 후보면 전설급으로 중요</td>
+                </tr>
+                <tr>
+                  <td>그림자</td>
+                  <td>난이도가 높다. 정화 보석/인원/상성이 부족하면 피한다.</td>
+                  <td>그림자 전설, 그림자 괴력몬, 그림자 마기라스 계열</td>
+                  <td>좋은 보스일 때만 조건부 추천</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>레이드로 얻는 것</h2>
+          <div class="cards">
+            <article class="card">
+              <span class="tag green">포켓몬</span>
+              <h3>보스 포획 기회</h3>
+              <p>야생에서 보기 어려운 전설, 메가, 희귀 포켓몬을 얻는다. IV가 낮아도 고CP면 초반 전력이다.</p>
+            </article>
+            <article class="card">
+              <span class="tag blue">성장 재료</span>
+              <h3>이상한사탕·기술머신</h3>
+              <p>전설 사탕 수급과 기술 세팅에 중요하다. 뉴비가 무료 패스를 버리면 손해인 이유다.</p>
+            </article>
+            <article class="card">
+              <span class="tag red">회복/포획</span>
+              <h3>황금라즈·회복템</h3>
+              <p>황금 라즈열매, 기력의조각, 회복약을 얻어 다음 레이드와 로켓단 준비에 쓴다.</p>
+            </article>
+          </div>
+        </section>
+          </div>
+
+          <div class="theme-panel" id="theme-healing" role="tabpanel" aria-labelledby="theme-healing-tab">
         <section id="healing-items">
           <h2>회복약 아끼는 법</h2>
           <p class="lead">
@@ -938,24 +1121,31 @@
             </table>
           </div>
         </section>
-
-        <section>
-          <h2>지금 당장 할 일</h2>
-          <ul class="checklist">
-            <li>별의모래는 아낀다. Lv30 전 강화는 당장 쓸 고CP 포켓몬만 최소로 한다.</li>
-            <li>코인은 포켓몬 박스 확장, 그 다음 아이템 가방 확장에 쓴다.</li>
-            <li>커뮤니티데이와 이벤트 보너스 날에 대량 포획한다.</li>
-            <li>필드리서치, 선물, 무료 레이드 패스, 체육관 코인은 매일 루틴으로 만든다.</li>
-            <li>CP 높고 타입 기술이 맞는 포켓몬은 임시 전력으로 남긴다.</li>
-          </ul>
-        </section>
+          </div>
+        </div>
       </div>
     </main>
 
     <footer>
-      Lv23 기준 요약. 이벤트 보너스와 세부 일정은 Pokemon GO 게임 내 오늘 탭에서 다시 확인하세요.
+      Lv27 기준 요약. 이벤트 보너스와 세부 일정은 Pokemon GO 게임 내 오늘 탭에서 다시 확인하세요.
     </footer>
     <script>
+      const themeButtons = document.querySelectorAll(".theme-button");
+      const themePanels = document.querySelectorAll(".theme-panel");
+
+      themeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const panelId = button.getAttribute("aria-controls");
+
+          themeButtons.forEach((item) => item.setAttribute("aria-selected", "false"));
+          themePanels.forEach((panel) => panel.classList.remove("active"));
+
+          button.setAttribute("aria-selected", "true");
+          document.getElementById(panelId).classList.add("active");
+          window.scrollTo({ top: document.querySelector(".theme-shell").offsetTop - 8, behavior: "smooth" });
+        });
+      });
+
       const tabButtons = document.querySelectorAll(".tab-button");
       const tabPanels = document.querySelectorAll(".tab-panel");
 
