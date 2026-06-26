@@ -20,6 +20,11 @@
         --blue: #2f6fd6;
         --red: #d94e3f;
         --yellow: #f2b84b;
+        --grass: #63bc5a;
+        --water: #4f91d9;
+        --electric: #f4c844;
+        --fire: #ff9c54;
+        --psychic: #fa7179;
         --shadow: 0 18px 50px rgba(26, 39, 59, 0.14);
       }
 
@@ -34,6 +39,8 @@
           "Segoe UI", sans-serif;
         background:
           radial-gradient(circle at top left, rgba(47, 143, 91, 0.18), transparent 34rem),
+          linear-gradient(115deg, rgba(47, 111, 214, 0.06) 0 1px, transparent 1px 72px),
+          linear-gradient(25deg, rgba(47, 143, 91, 0.06) 0 1px, transparent 1px 84px),
           linear-gradient(180deg, #f9fbf5 0%, var(--bg) 36rem);
         color: var(--ink);
         line-height: 1.6;
@@ -157,12 +164,44 @@
       }
 
       .card {
+        position: relative;
+        overflow: hidden;
         min-height: 190px;
         padding: 22px;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--surface);
         box-shadow: var(--shadow);
+      }
+
+      .card::after,
+      .quest-card::after,
+      .problem-card::after,
+      .tip-card::after,
+      .monster::after,
+      .type-card::after {
+        content: "";
+        position: absolute;
+        right: -24px;
+        bottom: -28px;
+        width: 92px;
+        height: 92px;
+        border: 8px solid #1c2430;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at center, #ffffff 0 13px, #1c2430 13px 18px, transparent 18px),
+          linear-gradient(#d94e3f 0 47%, #1c2430 47% 56%, #ffffff 56% 100%);
+        opacity: 0.055;
+        pointer-events: none;
+      }
+
+      .card > *,
+      .quest-card > *,
+      .problem-card > *,
+      .tip-card > *,
+      .monster > *,
+      .type-card > * {
+        position: relative;
       }
 
       .card h3 {
@@ -264,7 +303,22 @@
       }
 
       .trainer-dashboard {
+        position: relative;
+        overflow: hidden;
         margin-top: 18px;
+      }
+
+      .trainer-dashboard::before {
+        content: "";
+        position: absolute;
+        inset: -18px -24px auto auto;
+        width: 260px;
+        height: 160px;
+        border-radius: 999px;
+        background:
+          radial-gradient(circle at 70% 35%, rgba(242, 184, 75, 0.22), transparent 0 34px),
+          radial-gradient(circle at 36% 66%, rgba(47, 111, 214, 0.16), transparent 0 46px);
+        pointer-events: none;
       }
 
       .dashboard-header {
@@ -321,6 +375,8 @@
       }
 
       .quest-card {
+        position: relative;
+        overflow: hidden;
         min-height: 184px;
         padding: 18px;
         border: 1px solid var(--line);
@@ -429,6 +485,46 @@
         color: #1f7446;
       }
 
+      .type-signal-strip {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .type-signal {
+        min-height: 34px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 950;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+      }
+
+      .type-signal.grass {
+        background: var(--grass);
+      }
+
+      .type-signal.water {
+        background: var(--water);
+      }
+
+      .type-signal.electric {
+        background: var(--electric);
+        color: #28323d;
+        text-shadow: none;
+      }
+
+      .type-signal.fire {
+        background: var(--fire);
+      }
+
+      .type-signal.psychic {
+        background: var(--psychic);
+      }
+
       .problem-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -437,6 +533,8 @@
       }
 
       .problem-card {
+        position: relative;
+        overflow: hidden;
         display: grid;
         gap: 10px;
         min-height: 166px;
@@ -638,6 +736,8 @@
       }
 
       .monster {
+        position: relative;
+        overflow: hidden;
         display: grid;
         gap: 8px;
         min-height: 152px;
@@ -692,6 +792,8 @@
       }
 
       .tip-card {
+        position: relative;
+        overflow: hidden;
         min-height: 170px;
         padding: 18px;
         border: 1px solid var(--line);
@@ -743,6 +845,8 @@
       }
 
       .type-card {
+        position: relative;
+        overflow: hidden;
         display: grid;
         gap: 12px;
         min-height: 214px;
@@ -880,6 +984,7 @@
         .cards,
         .split,
         .dashboard-grid,
+        .type-signal-strip,
         .problem-grid,
         .resource-strip,
         .tier-grid,
@@ -985,6 +1090,14 @@
             <a class="quick-jump" href="#theme-healing-tab" data-theme-target="theme-healing-tab">회복약 부족</a>
             <a class="quick-jump" href="#theme-monsters-tab" data-theme-target="theme-monsters-tab">추천 포켓몬</a>
             <a class="quick-jump" href="#theme-feedback-tab" data-theme-target="theme-feedback-tab">피드백</a>
+          </div>
+
+          <div class="type-signal-strip" aria-label="타입 컬러 신호">
+            <div class="type-signal grass">풀 타입</div>
+            <div class="type-signal water">물 타입</div>
+            <div class="type-signal electric">전기 타입</div>
+            <div class="type-signal fire">불꽃 타입</div>
+            <div class="type-signal psychic">에스퍼 타입</div>
           </div>
 
           <div class="problem-grid" aria-label="상황별 빠른 해결">
