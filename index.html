@@ -364,6 +364,31 @@
         font-weight: 900;
       }
 
+      .tip-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .tip-card {
+        min-height: 170px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .tip-card h3 {
+        margin: 0 0 10px;
+        font-size: 20px;
+      }
+
+      .tip-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
       .checklist {
         display: grid;
         gap: 10px;
@@ -403,7 +428,8 @@
         .hero-grid,
         .cards,
         .split,
-        .tier-grid {
+        .tier-grid,
+        .tip-grid {
           grid-template-columns: 1fr;
         }
 
@@ -838,6 +864,78 @@
                 </article>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="healing-items">
+          <h2>회복약 아끼는 법</h2>
+          <p class="lead">
+            회복약이 부족할 때는 “모두 풀피”가 아니라 “다음 전투에 쓸 포켓몬만 회복”이 기준이다.
+            HP가 높은 방어형 포켓몬은 회복약을 많이 먹으니 초반 공격용으로 남발하지 않는다.
+          </p>
+          <div class="tip-grid">
+            <article class="tip-card">
+              <span class="tag green">우선 회복</span>
+              <h3>주력 6마리만 풀피</h3>
+              <p>
+                레이드와 로켓단에서 실제로 쓰는 딜러만 회복한다. 안 쓰는 포켓몬은 다친 상태로
+                둬도 손해가 거의 없다.
+              </p>
+            </article>
+            <article class="tip-card">
+              <span class="tag blue">아끼기</span>
+              <h3>고HP 방어형은 공격 자제</h3>
+              <p>
+                해피너스, 럭키, 잠만보처럼 HP가 높은 포켓몬은 회복약 소모가 크다. 체육관 방어용으로
+                쓰고 공격은 딜러에게 맡긴다.
+              </p>
+            </article>
+            <article class="tip-card">
+              <span class="tag red">버리기</span>
+              <h3>임시 고CP는 소모품처럼</h3>
+              <p>
+                초반 체육관 공격은 야생에서 잡은 고CP 포켓몬을 쓰고, 기절한 뒤 애매하면 회복하지
+                말고 박사행을 고려한다.
+              </p>
+            </article>
+          </div>
+          <div class="table-box" style="margin-top: 16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>상황</th>
+                  <th>운영 팁</th>
+                  <th>효과</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>로켓단</td>
+                  <td>상성으로 덜 맞는 포켓몬을 쓰고, 교체/차지기 후 상대 멈춤 시간을 활용한다.</td>
+                  <td>기절 횟수와 회복약 사용량 감소</td>
+                </tr>
+                <tr>
+                  <td>레이드</td>
+                  <td>보스 차지기만 가볍게 회피하고, 자동 추천보다 타입 딜러 위주로 편성한다.</td>
+                  <td>기력의조각과 고급상처약 절약</td>
+                </tr>
+                <tr>
+                  <td>체육관 공격</td>
+                  <td>회복약이 부족하면 전부 점령하려 하지 말고 무료 코인 회수 목적만 달성한다.</td>
+                  <td>불필요한 장기전 방지</td>
+                </tr>
+                <tr>
+                  <td>GO 배틀리그</td>
+                  <td>GBL은 전투 후 실제 HP가 닳지 않으니 회복약 부족할 때 부담 없이 한다.</td>
+                  <td>별의모래 수급 유지</td>
+                </tr>
+                <tr>
+                  <td>수급</td>
+                  <td>친구 선물, 체육관 포토디스크, 레이드 보상, 리서치를 우선 챙긴다.</td>
+                  <td>회복약/기력의조각 보충</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
