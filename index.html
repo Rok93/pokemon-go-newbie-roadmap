@@ -450,6 +450,32 @@
         margin-top: 42px;
       }
 
+      .theme-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      .category-button {
+        min-height: 40px;
+        padding: 8px 13px;
+        border: 1px solid rgba(47, 111, 214, 0.22);
+        border-radius: 8px;
+        background: #ffffff;
+        color: #344356;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 950;
+        cursor: pointer;
+      }
+
+      .category-button[aria-pressed="true"] {
+        border-color: rgba(217, 78, 63, 0.28);
+        background: #fff4ef;
+        color: #a7372e;
+      }
+
       .theme-nav {
         position: sticky;
         top: 0;
@@ -483,6 +509,10 @@
         border-color: rgba(47, 143, 91, 0.28);
         background: #edf8f0;
         color: #1f7446;
+      }
+
+      .theme-button.is-hidden {
+        display: none;
       }
 
       .theme-panel {
@@ -903,65 +933,72 @@
         </section>
 
         <div class="theme-shell">
+          <div class="theme-categories" aria-label="가이드 묶음 필터">
+            <button class="category-button" type="button" aria-pressed="true" data-theme-category="all">전체</button>
+            <button class="category-button" type="button" aria-pressed="false" data-theme-category="growth">성장</button>
+            <button class="category-button" type="button" aria-pressed="false" data-theme-category="field">포획·이벤트</button>
+            <button class="category-button" type="button" aria-pressed="false" data-theme-category="battle">전투</button>
+            <button class="category-button" type="button" aria-pressed="false" data-theme-category="manage">관리</button>
+          </div>
           <div class="theme-nav" role="tablist" aria-label="가이드 테마">
-            <button class="theme-button" id="theme-roadmap-tab" type="button" role="tab" aria-selected="true" aria-controls="theme-roadmap">
+            <button class="theme-button" id="theme-roadmap-tab" type="button" role="tab" aria-selected="true" aria-controls="theme-roadmap" data-category="growth">
               로드맵
             </button>
-            <button class="theme-button" id="theme-routine-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-routine">
+            <button class="theme-button" id="theme-routine-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-routine" data-category="growth">
               일일·주간
             </button>
-            <button class="theme-button" id="theme-social-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-social">
+            <button class="theme-button" id="theme-social-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-social" data-category="growth">
               친구·코인
             </button>
-            <button class="theme-button" id="theme-events-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-events">
+            <button class="theme-button" id="theme-events-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-events" data-category="field">
               이벤트 준비
             </button>
-            <button class="theme-button" id="theme-catching-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-catching">
+            <button class="theme-button" id="theme-catching-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-catching" data-category="field">
               포획·던지기
             </button>
-            <button class="theme-button" id="theme-tags-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-tags">
+            <button class="theme-button" id="theme-tags-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-tags" data-category="field">
               태그·검색식
             </button>
-            <button class="theme-button" id="theme-research-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-research">
+            <button class="theme-button" id="theme-research-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-research" data-category="growth">
               리서치
             </button>
-            <button class="theme-button" id="theme-evolution-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-evolution">
+            <button class="theme-button" id="theme-evolution-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-evolution" data-category="growth">
               도감·진화
             </button>
-            <button class="theme-button" id="theme-rocket-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-rocket">
+            <button class="theme-button" id="theme-rocket-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-rocket" data-category="battle">
               로켓단·그림자
             </button>
-            <button class="theme-button" id="theme-gbl-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-gbl">
+            <button class="theme-button" id="theme-gbl-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-gbl" data-category="battle">
               GBL
             </button>
-            <button class="theme-button" id="theme-candy-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-candy">
+            <button class="theme-button" id="theme-candy-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-candy" data-category="field">
               파트너·메가
             </button>
-            <button class="theme-button" id="theme-moves-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-moves">
+            <button class="theme-button" id="theme-moves-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-moves" data-category="battle">
               기술·강화
             </button>
-            <button class="theme-button" id="theme-eggs-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-eggs">
+            <button class="theme-button" id="theme-eggs-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-eggs" data-category="growth">
               알·부화
             </button>
-            <button class="theme-button" id="theme-storage-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-storage">
+            <button class="theme-button" id="theme-storage-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-storage" data-category="manage">
               보관 기준
             </button>
-            <button class="theme-button" id="theme-items-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-items">
+            <button class="theme-button" id="theme-items-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-items" data-category="manage">
               아이템 정리
             </button>
-            <button class="theme-button" id="theme-monsters-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-monsters">
+            <button class="theme-button" id="theme-monsters-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-monsters" data-category="battle">
               추천 포켓몬
             </button>
-            <button class="theme-button" id="theme-raids-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-raids">
+            <button class="theme-button" id="theme-raids-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-raids" data-category="battle">
               레이드
             </button>
-            <button class="theme-button" id="theme-types-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-types">
+            <button class="theme-button" id="theme-types-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-types" data-category="battle">
               상성표
             </button>
-            <button class="theme-button" id="theme-healing-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-healing">
+            <button class="theme-button" id="theme-healing-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-healing" data-category="battle">
               회복약
             </button>
-            <button class="theme-button" id="theme-feedback-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-feedback">
+            <button class="theme-button" id="theme-feedback-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-feedback" data-category="manage">
               피드백
             </button>
           </div>
@@ -4036,6 +4073,29 @@
     <script>
       const themeButtons = document.querySelectorAll(".theme-button");
       const themePanels = document.querySelectorAll(".theme-panel");
+      const categoryButtons = document.querySelectorAll("[data-theme-category]");
+
+      const setCategoryFilter = (category, syncActive = true) => {
+        categoryButtons.forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.themeCategory === category));
+        });
+
+        themeButtons.forEach((button) => {
+          const isVisible = category === "all" || button.dataset.category === category;
+          button.classList.toggle("is-hidden", !isVisible);
+        });
+
+        const activeButton = document.querySelector('.theme-button[aria-selected="true"]');
+        const activeVisible = activeButton && !activeButton.classList.contains("is-hidden");
+
+        if (syncActive && !activeVisible) {
+          const nextButton = Array.from(themeButtons).find((button) => !button.classList.contains("is-hidden"));
+
+          if (nextButton) {
+            activateTheme(nextButton);
+          }
+        }
+      };
 
       const activateTheme = (button) => {
         const panelId = button.getAttribute("aria-controls");
@@ -4043,6 +4103,12 @@
 
         if (!panel) {
           return;
+        }
+
+        const activeCategory = document.querySelector('[data-theme-category][aria-pressed="true"]')?.dataset.themeCategory;
+
+        if (activeCategory && activeCategory !== "all" && button.dataset.category !== activeCategory) {
+          setCategoryFilter(button.dataset.category, false);
         }
 
         themeButtons.forEach((item) => item.setAttribute("aria-selected", "false"));
@@ -4055,6 +4121,10 @@
 
       themeButtons.forEach((button) => {
         button.addEventListener("click", () => activateTheme(button));
+      });
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => setCategoryFilter(button.dataset.themeCategory));
       });
 
       document.querySelectorAll("[data-theme-target]").forEach((link) => {
