@@ -462,6 +462,40 @@
         color: #344356;
       }
 
+      .type-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .type-card {
+        display: grid;
+        gap: 10px;
+        min-height: 178px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .type-card h3 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .type-row {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .type-row strong {
+        color: #263242;
+      }
+
       .raid-focus {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -513,7 +547,8 @@
         .split,
         .tier-grid,
         .tip-grid,
-        .raid-focus {
+        .raid-focus,
+        .type-grid {
           grid-template-columns: 1fr;
         }
 
@@ -565,6 +600,9 @@
             </button>
             <button class="theme-button" id="theme-raids-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-raids">
               레이드
+            </button>
+            <button class="theme-button" id="theme-types-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-types">
+              상성표
             </button>
             <button class="theme-button" id="theme-healing-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-healing">
               회복약
@@ -1073,6 +1111,129 @@
               <span class="tag red">회복/포획</span>
               <h3>황금라즈·회복템</h3>
               <p>황금 라즈열매, 기력의조각, 회복약을 얻어 다음 레이드와 로켓단 준비에 쓴다.</p>
+            </article>
+          </div>
+        </section>
+          </div>
+
+          <div class="theme-panel" id="theme-types" role="tabpanel" aria-labelledby="theme-types-tab">
+        <section id="type-chart">
+          <h2>공격 타입별 상성표</h2>
+          <p class="lead">
+            레이드와 로켓단에서는 “내 포켓몬 타입”보다 “내 기술 타입”이 중요하다.
+            아래 표는 공격 기술 기준으로 누구에게 강한지, 약한지, 효과가 없는지를 정리한 것이다.
+          </p>
+          <div class="note">
+            예: 물 타입 보스라도 물 기술을 쓰면 물 공격수보다 전기·풀 공격수가 더 좋다.
+          </div>
+          <div class="type-grid" style="margin-top: 16px;">
+            <article class="type-card">
+              <h3>노말</h3>
+              <div class="type-row"><strong>강함</strong><span>없음</span></div>
+              <div class="type-row"><strong>약함</strong><span>바위, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>고스트</span></div>
+            </article>
+            <article class="type-card">
+              <h3>불꽃</h3>
+              <div class="type-row"><strong>강함</strong><span>풀, 얼음, 벌레, 강철</span></div>
+              <div class="type-row"><strong>약함</strong><span>불꽃, 물, 바위, 드래곤</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>물</h3>
+              <div class="type-row"><strong>강함</strong><span>불꽃, 땅, 바위</span></div>
+              <div class="type-row"><strong>약함</strong><span>물, 풀, 드래곤</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>전기</h3>
+              <div class="type-row"><strong>강함</strong><span>물, 비행</span></div>
+              <div class="type-row"><strong>약함</strong><span>전기, 풀, 드래곤</span></div>
+              <div class="type-row"><strong>무효</strong><span>땅</span></div>
+            </article>
+            <article class="type-card">
+              <h3>풀</h3>
+              <div class="type-row"><strong>강함</strong><span>물, 땅, 바위</span></div>
+              <div class="type-row"><strong>약함</strong><span>불꽃, 풀, 독, 비행, 벌레, 드래곤, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>얼음</h3>
+              <div class="type-row"><strong>강함</strong><span>풀, 땅, 비행, 드래곤</span></div>
+              <div class="type-row"><strong>약함</strong><span>불꽃, 물, 얼음, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>격투</h3>
+              <div class="type-row"><strong>강함</strong><span>노말, 얼음, 바위, 악, 강철</span></div>
+              <div class="type-row"><strong>약함</strong><span>독, 비행, 에스퍼, 벌레, 페어리</span></div>
+              <div class="type-row"><strong>무효</strong><span>고스트</span></div>
+            </article>
+            <article class="type-card">
+              <h3>독</h3>
+              <div class="type-row"><strong>강함</strong><span>풀, 페어리</span></div>
+              <div class="type-row"><strong>약함</strong><span>독, 땅, 바위, 고스트</span></div>
+              <div class="type-row"><strong>무효</strong><span>강철</span></div>
+            </article>
+            <article class="type-card">
+              <h3>땅</h3>
+              <div class="type-row"><strong>강함</strong><span>불꽃, 전기, 독, 바위, 강철</span></div>
+              <div class="type-row"><strong>약함</strong><span>풀, 벌레</span></div>
+              <div class="type-row"><strong>무효</strong><span>비행</span></div>
+            </article>
+            <article class="type-card">
+              <h3>비행</h3>
+              <div class="type-row"><strong>강함</strong><span>풀, 격투, 벌레</span></div>
+              <div class="type-row"><strong>약함</strong><span>전기, 바위, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>에스퍼</h3>
+              <div class="type-row"><strong>강함</strong><span>격투, 독</span></div>
+              <div class="type-row"><strong>약함</strong><span>에스퍼, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>악</span></div>
+            </article>
+            <article class="type-card">
+              <h3>벌레</h3>
+              <div class="type-row"><strong>강함</strong><span>풀, 에스퍼, 악</span></div>
+              <div class="type-row"><strong>약함</strong><span>불꽃, 격투, 독, 비행, 고스트, 강철, 페어리</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>바위</h3>
+              <div class="type-row"><strong>강함</strong><span>불꽃, 얼음, 비행, 벌레</span></div>
+              <div class="type-row"><strong>약함</strong><span>격투, 땅, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>고스트</h3>
+              <div class="type-row"><strong>강함</strong><span>에스퍼, 고스트</span></div>
+              <div class="type-row"><strong>약함</strong><span>악</span></div>
+              <div class="type-row"><strong>무효</strong><span>노말</span></div>
+            </article>
+            <article class="type-card">
+              <h3>드래곤</h3>
+              <div class="type-row"><strong>강함</strong><span>드래곤</span></div>
+              <div class="type-row"><strong>약함</strong><span>강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>페어리</span></div>
+            </article>
+            <article class="type-card">
+              <h3>악</h3>
+              <div class="type-row"><strong>강함</strong><span>에스퍼, 고스트</span></div>
+              <div class="type-row"><strong>약함</strong><span>격투, 악, 페어리</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>강철</h3>
+              <div class="type-row"><strong>강함</strong><span>얼음, 바위, 페어리</span></div>
+              <div class="type-row"><strong>약함</strong><span>불꽃, 물, 전기, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
+            </article>
+            <article class="type-card">
+              <h3>페어리</h3>
+              <div class="type-row"><strong>강함</strong><span>격투, 드래곤, 악</span></div>
+              <div class="type-row"><strong>약함</strong><span>불꽃, 독, 강철</span></div>
+              <div class="type-row"><strong>무효</strong><span>없음</span></div>
             </article>
           </div>
         </section>
