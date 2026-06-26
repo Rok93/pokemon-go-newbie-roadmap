@@ -670,6 +670,9 @@
             <button class="theme-button" id="theme-candy-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-candy">
               파트너·메가
             </button>
+            <button class="theme-button" id="theme-moves-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-moves">
+              기술·강화
+            </button>
             <button class="theme-button" id="theme-storage-tab" type="button" role="tab" aria-selected="false" aria-controls="theme-storage">
               보관 기준
             </button>
@@ -1706,6 +1709,188 @@
             <li>3. 메가 진화 후보는 첫 메가에너지 확보 후 파트너 걷기로 유지 루트를 만든다.</li>
             <li>4. 흔한 포켓몬은 파인열매와 대량 포획으로 해결하고 이상한사탕을 쓰지 않는다.</li>
             <li>5. 강화보다 진화/기술/보관 후보 선별을 먼저 끝낸 뒤 사탕을 사용한다.</li>
+          </ul>
+        </section>
+          </div>
+
+          <div class="theme-panel" id="theme-moves" role="tabpanel" aria-labelledby="theme-moves-tab">
+        <section id="moves-guide">
+          <h2>기술·강화 판단 기준</h2>
+          <p class="lead">
+            좋은 포켓몬도 기술 타입이 안 맞으면 레이드 성능이 크게 떨어진다.
+            Lv27에서는 별의모래 강화보다 “타입과 기술이 맞는 고CP 포켓몬을 임시 전력으로 쓰기”가 먼저다.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <span class="tag green">먼저</span>
+              <h3>기술 타입 확인</h3>
+              <p>물 포켓몬은 물 기술, 격투 포켓몬은 격투 기술처럼 포켓몬 역할과 기술 타입이 맞아야 한다.</p>
+            </article>
+            <article class="card">
+              <span class="tag blue">보류</span>
+              <h3>강화는 Lv30 이후</h3>
+              <p>Lv30 전에는 야생 고레벨 포켓몬을 잡아 쓰는 편이 별의모래 효율이 좋다.</p>
+            </article>
+            <article class="card">
+              <span class="tag red">주의</span>
+              <h3>해방 남발 금지</h3>
+              <p>두 번째 차지기 해방은 비용이 크다. PvP 주력이나 오래 쓸 포켓몬만 진행한다.</p>
+            </article>
+          </div>
+          <div class="table-box" style="margin-top: 16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>상황</th>
+                  <th>추천 행동</th>
+                  <th>이유</th>
+                  <th>Lv27 판단</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CP 높고 기술도 맞음</td>
+                  <td>바로 임시 전력으로 사용</td>
+                  <td>강화 없이 레이드/로켓단에 투입할 수 있다.</td>
+                  <td>IV가 낮아도 당장은 유용</td>
+                </tr>
+                <tr>
+                  <td>CP 높지만 기술이 안 맞음</td>
+                  <td>강한 종족이면 기술머신 후보</td>
+                  <td>기술만 맞추면 바로 쓸 수 있다.</td>
+                  <td>약한 종족이면 기술머신 아끼기</td>
+                </tr>
+                <tr>
+                  <td>IV 좋지만 CP 낮음</td>
+                  <td>장기 후보로 보관</td>
+                  <td>강화 비용이 많이 들어 초반 효율이 낮다.</td>
+                  <td>Lv30 이후 투자 여부 재판단</td>
+                </tr>
+                <tr>
+                  <td>특별기술 필요</td>
+                  <td>이벤트 진화 또는 대단한 기술머신까지 대기</td>
+                  <td>일반 기술머신으로 못 얻는 기술이 있다.</td>
+                  <td>대짱이 하이드로캐논, 메타그로스 코멧펀치 등</td>
+                </tr>
+                <tr>
+                  <td>PvP 후보</td>
+                  <td>두 번째 차지기 해방은 신중히</td>
+                  <td>사탕/별의모래 비용이 크다.</td>
+                  <td>오래 쓸 슈퍼리그 후보만 우선</td>
+                </tr>
+                <tr>
+                  <td>그림자 포켓몬</td>
+                  <td>화풀이 제거 이벤트 전까지 보관</td>
+                  <td>화풀이가 있으면 좋은 차지기를 쓰기 어렵다.</td>
+                  <td>좋은 그림자는 정화보다 대기</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>기술머신 사용 우선순위</h2>
+          <div class="table-box">
+            <table>
+              <thead>
+                <tr>
+                  <th>우선</th>
+                  <th>사용 대상</th>
+                  <th>왜 우선인가</th>
+                  <th>피해야 할 사용</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="pill">1</span></td>
+                  <td>레이드 주력 딜러</td>
+                  <td>기술 타입이 맞으면 바로 전투 효율이 오른다.</td>
+                  <td>약한 종족의 임시 포켓몬에 낭비</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">1</span></td>
+                  <td>화풀이 제거 가능한 좋은 그림자</td>
+                  <td>이벤트 기간을 놓치면 다음 기회까지 오래 기다릴 수 있다.</td>
+                  <td>낮은 가치 그림자에 무작정 사용</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">2</span></td>
+                  <td>GBL 주력 후보</td>
+                  <td>PvP는 기술 구성이 승패에 크게 영향을 준다.</td>
+                  <td>개체/리그 역할이 불확실한 후보</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">2</span></td>
+                  <td>메가 진화 주력</td>
+                  <td>메가 레이드와 타입 보너스 활용도가 높다.</td>
+                  <td>메가에너지도 없는 포켓몬에 선투자</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">X</span></td>
+                  <td>일반 도감용 포켓몬</td>
+                  <td>전투 사용 빈도가 낮다.</td>
+                  <td>도감 채우기용에 기술머신 사용</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>강화해도 되는 경우</h2>
+          <p class="lead">
+            초반에는 “강화하면 강해진다”보다 “강화비를 회수할 만큼 오래 쓸까?”가 더 중요하다.
+            아래 조건을 여러 개 만족할 때만 별의모래를 쓰는 편이 안전하다.
+          </p>
+          <div class="table-box">
+            <table>
+              <thead>
+                <tr>
+                  <th>조건</th>
+                  <th>강화 판단</th>
+                  <th>예시</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>강한 종족 + 좋은 기술 + 높은 CP</td>
+                  <td>소량 강화 가능</td>
+                  <td>괴력몬, 맘모꾸리, 마기라스, 샹델라 등</td>
+                </tr>
+                <tr>
+                  <td>전설/메가/그림자 장기 후보</td>
+                  <td>Lv30 이후 천천히 투자</td>
+                  <td>레쿠쟈, 그란돈, 가이오가, 그림자 괴력몬 등</td>
+                </tr>
+                <tr>
+                  <td>커뮤니티데이 특별기술 보유</td>
+                  <td>보관 후 필요할 때 강화</td>
+                  <td>하이드로캐논 대짱이, 코멧펀치 메타그로스</td>
+                </tr>
+                <tr>
+                  <td>PvP 리그 CP에 이미 가까움</td>
+                  <td>적은 비용이면 조정 가능</td>
+                  <td>CP 1450대 슈퍼리그 후보</td>
+                </tr>
+                <tr>
+                  <td>낮은 CP + 평범한 종족</td>
+                  <td>강화 금지</td>
+                  <td>흔한 야생 포켓몬, 도감용 포켓몬</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>투자 전 체크리스트</h2>
+          <ul class="checklist">
+            <li>1. 이 포켓몬이 레이드, 로켓단, GBL 중 어디에 쓰이는지 먼저 정한다.</li>
+            <li>2. 노말 기술과 스페셜 기술 타입이 역할에 맞는지 확인한다.</li>
+            <li>3. 특별기술이 필요한 포켓몬이면 이벤트 진화 기회를 기다린다.</li>
+            <li>4. 강화 버튼을 누르기 전 같은 타입의 고CP 대체 포켓몬이 있는지 확인한다.</li>
+            <li>5. 별의모래가 부족하면 강화보다 포획, 무료 레이드, GBL 보상 회수를 먼저 한다.</li>
           </ul>
         </section>
           </div>
