@@ -884,6 +884,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        gap: 5px;
         min-width: 48px;
         min-height: 30px;
         padding: 5px 9px;
@@ -895,6 +896,39 @@
         text-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
         white-space: nowrap;
       }
+
+      .type-chip::before {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.24);
+        color: inherit;
+        font-size: 11px;
+        line-height: 1;
+      }
+
+      .type-chip.normal::before { content: "노"; }
+      .type-chip.fire::before { content: "불"; }
+      .type-chip.water::before { content: "물"; }
+      .type-chip.electric::before { content: "전"; }
+      .type-chip.grass::before { content: "풀"; }
+      .type-chip.ice::before { content: "얼"; }
+      .type-chip.fighting::before { content: "격"; }
+      .type-chip.poison::before { content: "독"; }
+      .type-chip.ground::before { content: "땅"; }
+      .type-chip.flying::before { content: "비"; }
+      .type-chip.psychic::before { content: "에"; }
+      .type-chip.bug::before { content: "벌"; }
+      .type-chip.rock::before { content: "바"; }
+      .type-chip.ghost::before { content: "고"; }
+      .type-chip.dragon::before { content: "드"; }
+      .type-chip.dark::before { content: "악"; }
+      .type-chip.steel::before { content: "강"; }
+      .type-chip.fairy::before { content: "페"; }
+      .type-chip.none::before { content: "-"; }
 
       .matchup {
         display: grid;
@@ -4035,6 +4069,111 @@
             <span class="type-chip steel">강철</span>
             <span class="type-chip fairy">페어리</span>
           </div>
+
+          <div class="table-box" style="margin-top: 16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>상대 타입</th>
+                  <th>추천 공격 타입</th>
+                  <th>뉴비 메모</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="type-chip normal">노말</span></td>
+                  <td><div class="chip-list"><span class="type-chip fighting">격투</span></div></td>
+                  <td>체육관 방어용 해피너스·잠만보류를 때릴 때 자주 쓴다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip fire">불꽃</span></td>
+                  <td><div class="chip-list"><span class="type-chip water">물</span><span class="type-chip ground">땅</span><span class="type-chip rock">바위</span></div></td>
+                  <td>물 타입 딜러가 초반에 가장 쓰기 쉽다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip water">물</span></td>
+                  <td><div class="chip-list"><span class="type-chip electric">전기</span><span class="type-chip grass">풀</span></div></td>
+                  <td>전기 딜러는 물·비행 보스 대응에 오래 쓴다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip electric">전기</span></td>
+                  <td><div class="chip-list"><span class="type-chip ground">땅</span></div></td>
+                  <td>전기 보스는 땅 공격이 가장 단순한 정답이다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip grass">풀</span></td>
+                  <td><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip ice">얼음</span><span class="type-chip poison">독</span><span class="type-chip flying">비행</span><span class="type-chip bug">벌레</span></div></td>
+                  <td>불꽃이나 얼음 딜러부터 맞추면 활용도가 좋다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip ice">얼음</span></td>
+                  <td><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip fighting">격투</span><span class="type-chip rock">바위</span><span class="type-chip steel">강철</span></div></td>
+                  <td>격투 딜러는 노말·바위·악·강철까지 같이 본다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip fighting">격투</span></td>
+                  <td><div class="chip-list"><span class="type-chip flying">비행</span><span class="type-chip psychic">에스퍼</span><span class="type-chip fairy">페어리</span></div></td>
+                  <td>페어리 딜러는 악·드래곤 대응까지 겸한다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip poison">독</span></td>
+                  <td><div class="chip-list"><span class="type-chip ground">땅</span><span class="type-chip psychic">에스퍼</span></div></td>
+                  <td>땅 딜러가 있으면 독·전기·강철 보스까지 대응 폭이 넓다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip ground">땅</span></td>
+                  <td><div class="chip-list"><span class="type-chip water">물</span><span class="type-chip grass">풀</span><span class="type-chip ice">얼음</span></div></td>
+                  <td>물과 풀은 초반 야생 고CP로 임시 전력 만들기 쉽다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip flying">비행</span></td>
+                  <td><div class="chip-list"><span class="type-chip electric">전기</span><span class="type-chip ice">얼음</span><span class="type-chip rock">바위</span></div></td>
+                  <td>얼음은 드래곤·땅 보스에도 좋아서 우선순위가 높다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip psychic">에스퍼</span></td>
+                  <td><div class="chip-list"><span class="type-chip bug">벌레</span><span class="type-chip ghost">고스트</span><span class="type-chip dark">악</span></div></td>
+                  <td>악 타입은 에스퍼·고스트 레이드에서 자주 필요하다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip bug">벌레</span></td>
+                  <td><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip flying">비행</span><span class="type-chip rock">바위</span></div></td>
+                  <td>벌레 보스는 불꽃이나 바위로 처리하면 쉽다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip rock">바위</span></td>
+                  <td><div class="chip-list"><span class="type-chip water">물</span><span class="type-chip grass">풀</span><span class="type-chip fighting">격투</span><span class="type-chip ground">땅</span><span class="type-chip steel">강철</span></div></td>
+                  <td>약점이 많아서 가진 딜러 중 CP 높은 쪽을 고르기 좋다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip ghost">고스트</span></td>
+                  <td><div class="chip-list"><span class="type-chip ghost">고스트</span><span class="type-chip dark">악</span></div></td>
+                  <td>안정성은 악 타입이 더 편한 경우가 많다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip dragon">드래곤</span></td>
+                  <td><div class="chip-list"><span class="type-chip ice">얼음</span><span class="type-chip dragon">드래곤</span><span class="type-chip fairy">페어리</span></div></td>
+                  <td>뉴비는 얼음·페어리부터 준비하면 덜 위험하다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip dark">악</span></td>
+                  <td><div class="chip-list"><span class="type-chip fighting">격투</span><span class="type-chip bug">벌레</span><span class="type-chip fairy">페어리</span></div></td>
+                  <td>격투 딜러가 있으면 악·노말·강철 대응에 좋다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip steel">강철</span></td>
+                  <td><div class="chip-list"><span class="type-chip fire">불꽃</span><span class="type-chip fighting">격투</span><span class="type-chip ground">땅</span></div></td>
+                  <td>강철 보스는 불꽃·격투·땅 중 보유 전력이 높은 쪽을 쓴다.</td>
+                </tr>
+                <tr>
+                  <td><span class="type-chip fairy">페어리</span></td>
+                  <td><div class="chip-list"><span class="type-chip poison">독</span><span class="type-chip steel">강철</span></div></td>
+                  <td>페어리 대응은 강철 딜러가 더 범용적인 편이다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="type-grid" style="margin-top: 16px;">
             <article class="type-card">
               <div class="type-header"><h3>노말 공격</h3><span class="type-chip normal">노말</span></div>
